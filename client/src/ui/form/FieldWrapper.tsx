@@ -16,19 +16,26 @@ interface FieldWrapperProps {
   error?: FieldError
   placeholder?: string
   isValue?: boolean
+  isTransparent?: boolean
 }
 
 const FieldWrapper = ({
   children,
   error,
   placeholder,
-  isValue
+  isValue,
+  isTransparent
 }: FieldWrapperProps) => {
   const [isFocus, toggle] = useToggle()
 
   return (
     <div
-      className={classNames(styles.field, error && styles.field__error)}
+      className={classNames(
+        'relative',
+        styles.field,
+        isTransparent && styles.field__transparent,
+        error && !isTransparent && styles.field__error
+      )}
       onFocus={toggle}
       onBlur={toggle}
     >

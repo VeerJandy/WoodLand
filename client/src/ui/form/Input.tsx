@@ -49,8 +49,8 @@ const Input = ({
       <input
         type={type ?? 'text'}
         className={styles.input}
-        {...field}
         autoComplete={autoComplete}
+        {...field}
       />
       {endContent}
 

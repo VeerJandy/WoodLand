@@ -1,12 +1,13 @@
 @import "~/styles/_mixins";
 
 .field {
-  position: relative;
-  height: 2rem;
+  cursor: pointer;
+  height: var(--field-height);
   width: 100%;
   display: flex;
   align-items: center;
   gap: 0.25rem;
+
   background: var(--white);
   border: 1px solid var(--gray-1);
   padding: 0 0.5rem;
@@ -31,6 +32,13 @@
   &__error {
     border: 1px solid var(--red-2);
   }
+
+  &__transparent {
+    background: transparent;
+    border: none;
+    padding: 0;
+    height: fit-content;
+  }
 }
 
 .input {
@@ -49,6 +57,37 @@
   }
 }
 
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 2rem;
+  height: 1rem;
+  padding: 0.125rem 0.075rem;
+
+  border: 1px solid transparent;
+  background: var(--gray-2);
+  border-radius: var(--border-radius-full);
+  transition: background var(--transition);
+
+  &__error {
+    border: 1px solid var(--red-4);
+  }
+
+  span {
+    display: block;
+    width: 0.875rem;
+    height: 0.875rem;
+    background: var(--white);
+    border-radius: var(--border-radius-full);
+  }
+
+  &__active {
+    justify-content: flex-end;
+    background: var(--green-4);
+  }
+}
+
 @include darkTheme {
   .field {
     background: var(--gray-7);
@@ -60,6 +99,11 @@
 
     &__error {
       border: 1px solid var(--red-4);
+    }
+
+    &__transparent {
+      background: transparent;
+      border: none;
     }
   }
 }

@@ -27,7 +27,9 @@ module.exports = {
     },
     colors: {
       white: 'var(--white)',
+      'white-opacity': 'var(--white-opacity)',
       black: 'var(--black)',
+      'black-opacity': 'var(--black-opacity)',
       gray: {
         0: 'var(--gray-0)',
         1: 'var(--gray-1)',

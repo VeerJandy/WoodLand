@@ -1,0 +1,81 @@
+@import "~/styles/_mixins";
+
+.button {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  height: var(--field-height);
+  width: fit-content;
+  padding-inline: 2.5rem;
+  transition: opacity var(--transition), background var(--transition), filter var(--transition), color var(--transition);
+
+  border-radius: var(--border-radius);
+  background: var(--orange-4);
+  color: var(--white);
+
+  &:hover {
+    background: var(--orange-5);
+  }
+
+  &:active {
+    scale: 0.97;
+  }
+
+  // BG
+  &__white {
+    background: var(--white-opacity);
+    @include blur;
+    color: var(--black);
+
+    &:hover {
+      background: var(--white);
+    }
+  }
+
+  &__transparent {
+    background: transparent;
+    border: none;
+    color: inherit;
+    transition: none;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  // Sizes
+  &__rounded {
+    border-radius: var(--border-radius-full);
+  }
+
+  &__small {
+    height: var(--field-height-small);
+    border-radius: var(--border-radius-full);
+    padding-inline: 1.5rem;
+  }
+
+  &__circle {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  &__empty {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Other
+  &__disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
