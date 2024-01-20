@@ -1,4 +1,5 @@
 export type ClassName = string | string[]
+export type ID = string
 
 export type RequestMethod = 'POST' | 'GET'
 

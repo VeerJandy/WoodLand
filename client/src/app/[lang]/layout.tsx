@@ -6,7 +6,9 @@ import { Roboto } from 'next/font/google'
 import { ReactNode } from 'react'
 
 import type { Locale } from '~/i18n/i18n'
+import { Auth } from '~/modules/auth'
 import { Header } from '~/modules/header'
+import { Toast } from '~/modules/toast'
 
 import Providers from './providers'
 
@@ -38,6 +40,9 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
         <Providers dictionary={dictionary}>
           <Header />
           <main>{children}</main>
+
+          <Auth />
+          <Toast />
         </Providers>
       </body>
     </html>
