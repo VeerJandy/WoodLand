@@ -102,3 +102,24 @@
   --border-radius: 0.5rem;
   --border-radius-full: 999rem;
 }
+
+// ====================================================================================
+// Transitions
+:root {
+  --transition-low: 0.2s;
+  --transition: 0.3s;
+}
+
+// ====================================================================================
+// Z-index
+:root {
+  --z-index-toast: 200;
+  --z-index-popup: 200;
+  --z-index-modal: 190;
+  --z-index-header: 100;
+  --z-index-high: 20;
+  --z-index-medium: 10;
+  --z-index-low: 5;
+  --z-index-one: 1;
+  --z-index-minus: -1;
+}

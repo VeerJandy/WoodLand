@@ -1,0 +1,91 @@
+@import "_mixins";
+
+:root {
+  --h1: 3rem; // 48px
+  --h2: 2.25rem; // 36px
+  --h3: 1.875rem; // 30px
+  --h4: 1.5rem; // 24px
+  --h5: 1.25rem; // 20px
+  --h6: 1.125rem; // 18px
+  --p: 1rem; // 16px
+  --span: 0.875rem; // 14px
+  --small: 0.75rem; // 12px
+
+  --lh-h1: 1;
+  --lh-h2: 2.5rem; // 40px
+  --lh-h3: 2.25rem; // 36px
+  --lh-h4: 1.75rem; // 28px
+  --lh-h5: 1.5rem; // 24px
+  --lh-h6: 1.75rem; // 28px
+  --lh-p: 1.5rem; // 24px
+  --lh-span: 1.25rem; // 20px
+  --lh-small: 1rem; // 16px
+}
+
+.h1 {
+  font-size: var(--h1);
+  line-height: var(--lh-h1);
+  text-wrap: balance;
+}
+
+.h2 {
+  font-size: var(--h2);
+  line-height: var(--lh-h2);
+}
+
+.h3 {
+  font-size: var(--h3);
+  line-height: var(--lh-h3);
+}
+
+.h4 {
+  font-size: var(--h4);
+  line-height: var(--lh-h4);
+}
+
+.h5 {
+  font-size: var(--h5);
+  line-height: var(--lh-h5);
+}
+
+.h6 {
+  font-size: var(--h6);
+  line-height: var(--lh-h6);
+}
+
+.p {
+  font-size: var(--p);
+  line-height: var(--lh-p);
+}
+
+.span {
+  font-size: var(--span);
+  line-height: var(--lh-span);
+}
+
+.small {
+  font-size: var(--small);
+  line-height: var(--lh-small);
+}
+
+.a {
+  font-size: var(--p);
+  line-height: var(--lh-p);
+  color: var(--blue);
+
+  @include isHover {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.placeholder {
+  &::placeholder {
+    color: var(--gray-3);
+  }
+
+  &-text {
+    color: var(--gray-3);
+  }
+}
