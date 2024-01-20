@@ -46,6 +46,7 @@ module.exports = {
     'prefer-const': 'warn',
     'no-console': 'warn',
     'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error'
+    'simple-import-sort/exports': 'error',
+    'tailwindcss/no-custom-classname': 'off'
   }
 }

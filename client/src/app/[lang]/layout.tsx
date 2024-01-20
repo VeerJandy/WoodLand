@@ -33,7 +33,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
 
   return (
     <html lang={params.lang} className={font.className} data-theme="dark">
-      <body className="">
+      <body className="scroll-bar bg-gray-0 text-black transition-colors dark:bg-black dark:text-white">
         <Providers dictionary={dictionary}>
           <main>{children}</main>
         </Providers>
