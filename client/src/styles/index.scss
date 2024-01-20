@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "_mixins";
+@import "_variables";
+
+:root {
+  --container-half-width: calc((100vw - 1500px) / 2);
+}
+
+// ===================================================================
+* {
+  outline: none;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+html, body {
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+  letter-spacing: -0.022em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+  }
+}
+
+// ===================================================================
+@import "_text";
+@import "_ui";
