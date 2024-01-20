@@ -6,6 +6,7 @@ import { Roboto } from 'next/font/google'
 import { ReactNode } from 'react'
 
 import type { Locale } from '~/i18n/i18n'
+import { Header } from '~/modules/header'
 
 import Providers from './providers'
 
@@ -35,6 +36,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
     <html lang={params.lang} className={font.className} data-theme="dark">
       <body className="scroll-bar bg-gray-0 text-black transition-colors dark:bg-black dark:text-white">
         <Providers dictionary={dictionary}>
+          <Header />
           <main>{children}</main>
         </Providers>
       </body>
