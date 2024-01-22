@@ -1,7 +1,33 @@
 {
   "common": {
-    "test": {
-      "name": "Maria"
-    }
+    "sign_in": "Увійти",
+    "create": "Створити",
+    "password": "Пароль",
+    "repeat_password": "Повторіть пароль",
+    "first_name": "Ім'я",
+    "last_name": "Прізвище",
+    "info": "Інформація",
+    "success": "Успіх",
+    "error": "Помилка",
+    "warning": "Попередження"
+  },
+  "errors": {
+    "something_went_wrong": "Щось пішло не так",
+    "email_is_required": "Email обов'язковий",
+    "invalid_email": "Невірний email",
+    "min_length_password": "Мінімум 6 символів",
+    "max_length_password": "Максимум 20 символів",
+    "password_is_invalid": "Пароль некоректний",
+    "passwords_dont_match": "Паролі не співпадають",
+    "first_name_is_required": "Ім'я обов'язкове",
+    "last_name_is_required": "Прізвище обов'язкове",
+    "is_agree_is_required": "Ви повинні погодитися з умовами використання"
+  },
+  "auth": {
+    "modal_title": "Авторизація",
+    "already_have_account": "Вже маєте аккаунт?",
+    "don't_have_account": "Не маєте аккаунту?",
+    "is_agree_text": "Погоджуюсь з",
+    "is_agree_link": "умовами використання"
   }
 }

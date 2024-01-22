@@ -2,8 +2,9 @@
 
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
-import { memo, type ReactNode } from 'react'
-import { type FieldError } from 'react-hook-form'
+import type { ReactNode } from 'react'
+import { memo } from 'react'
+import type { FieldError } from 'react-hook-form'
 
 import { variants } from '~/consts/Animate'
 import useToggle from '~/hooks/useToggle'
@@ -17,6 +18,7 @@ interface FieldWrapperProps {
   placeholder?: string
   isValue?: boolean
   isTransparent?: boolean
+  disabled?: boolean
 }
 
 const FieldWrapper = ({
@@ -24,7 +26,8 @@ const FieldWrapper = ({
   error,
   placeholder,
   isValue,
-  isTransparent
+  isTransparent,
+  disabled
 }: FieldWrapperProps) => {
   const [isFocus, toggle] = useToggle()
 
@@ -34,7 +37,8 @@ const FieldWrapper = ({
         'relative',
         styles.field,
         isTransparent && styles.field__transparent,
-        error && !isTransparent && styles.field__error
+        error && !isTransparent && styles.field__error,
+        disabled && styles.field__disabled
       )}
       onFocus={toggle}
       onBlur={toggle}

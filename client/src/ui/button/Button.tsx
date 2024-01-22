@@ -9,7 +9,7 @@ import Text from '~/ui/text/Text'
 
 import styles from './Button.module.scss'
 
-interface ButtonProps {
+export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   className?: ClassName
   background?: 'white' | 'transparent'
@@ -80,5 +80,7 @@ const Button = ({
     </button>
   )
 }
+
+export const MotionButton = motion(memo(Button))
 
 export default memo(Button)

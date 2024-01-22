@@ -1,7 +1,7 @@
 @import "~/styles/_mixins";
 
 .toast {
-  background: var(--white);
+  background: var(--material-primary);
   @include select-none;
   @include blur;
   width: 16rem;
@@ -25,11 +25,5 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-  }
-}
-
-@include darkTheme {
-  .toast {
-    background: var(--gray-8);
   }
 }

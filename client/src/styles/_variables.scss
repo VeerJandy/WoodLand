@@ -6,6 +6,8 @@
   --white-opacity: rgba(255, 255, 255, 0.8);
   --black: #000;
   --black-opacity: rgba(0, 0, 0, 0.8);
+  --material-primary: #FFF;
+  --material-primary-dark: #161b22;
   --gray-0: #f0f6fc;
   --gray-1: #c9d1d9;
   --gray-2: #b1bac4;
@@ -98,10 +100,16 @@
   --coral-9: #460701;
 }
 
+@include darkTheme {
+  --material-primary: #161b22;
+  --material-primary-dark: #FFF;
+}
+
 // ====================================================================================
 // Border radius
 :root {
   --border-radius: 0.5rem;
+  --border-radius-medium: 0.75rem;
   --border-radius-full: 999rem;
 }
 

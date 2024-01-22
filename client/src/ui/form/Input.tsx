@@ -1,11 +1,7 @@
 'use client'
 
-import {
-  type HTMLInputTypeAttribute,
-  memo,
-  type ReactNode,
-  useContext
-} from 'react'
+import type { HTMLInputTypeAttribute, ReactNode } from 'react'
+import { memo, useContext } from 'react'
 import { useController } from 'react-hook-form'
 
 import type { AutoCompleteModel } from '~/models/AutoCompleteModel'
@@ -25,6 +21,7 @@ interface InputProps {
   iconDependOnValue?: boolean
   placeholder?: string
   autoComplete?: AutoCompleteModel
+  disabled?: boolean
 }
 
 const Input = ({
@@ -34,7 +31,8 @@ const Input = ({
   endContent,
   iconDependOnValue,
   placeholder,
-  autoComplete
+  autoComplete,
+  disabled
 }: InputProps) => {
   const form = useContext(FormContext)!
   const { field, fieldState } = useController({ name, control: form.control })
@@ -44,6 +42,7 @@ const Input = ({
       error={fieldState.error}
       isValue={Boolean(field.value)}
       placeholder={placeholder}
+      disabled={disabled}
     >
       {startContent}
       <input

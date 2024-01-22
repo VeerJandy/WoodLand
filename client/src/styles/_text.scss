@@ -71,21 +71,11 @@
 .a {
   font-size: var(--p);
   line-height: var(--lh-p);
-  color: var(--blue);
+  color: var(--blue-4);
 
   @include isHover {
     &:hover {
       text-decoration: underline;
     }
-  }
-}
-
-.placeholder {
-  &::placeholder {
-    color: var(--gray-3);
-  }
-
-  &-text {
-    color: var(--gray-3);
   }
 }

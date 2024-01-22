@@ -5,7 +5,7 @@ interface AnimateVariant {
   exit: string
 }
 
-export const variants: Record<string, AnimateVariant> = {
+export const variants: Record<'opacity' | 'xAndOpacity', AnimateVariant> = {
   opacity: {
     variants: {
       hidden: { opacity: 0 },
@@ -25,3 +25,8 @@ export const variants: Record<string, AnimateVariant> = {
     exit: 'hidden'
   }
 }
+
+export const durationSmall = 0.24
+export const durationMedium = 0.422
+
+export const easeMedium = [0.4, 0, 0.6, 1]

@@ -11,27 +11,19 @@
   &__backdrop {
     @include absolute;
     @include blur;
-    background: var(--material-black);
+    background: var(--black-opacity);
   }
 
   &__wrapper {
     position: relative;
     z-index: var(--z-index-one);
-    background: var(--gray-0);
+    background: var(--material-primary);
     padding: 1rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-medium);
     width: min(90%, 30rem);
     height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-}
-
-@include darkTheme {
-  .modal {
-    &__wrapper {
-      background: var(--gray-8);
-    }
   }
 }

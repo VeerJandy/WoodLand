@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
-import { memo, type ReactNode, useContext } from 'react'
+import type { ReactNode } from 'react'
+import { memo, useContext } from 'react'
 import { useController } from 'react-hook-form'
 
 import { FormContext } from '~/ui/form/Form'
@@ -25,7 +26,7 @@ const Checkbox = ({ name, label, children }: CheckboxProps) => {
       isValue={Boolean(field.value)}
       isTransparent
     >
-      <label className="flex cursor-pointer items-center gap-2">
+      <label className="relative flex cursor-pointer items-center gap-2">
         <input type="checkbox" className="absolute hidden" {...field} />
 
         <span
@@ -36,7 +37,7 @@ const Checkbox = ({ name, label, children }: CheckboxProps) => {
           )}
         >
           <motion.span
-            layout
+            layout="position"
             transition={{
               type: 'spring',
               stiffness: 700,

@@ -30,6 +30,8 @@ module.exports = {
       'white-opacity': 'var(--white-opacity)',
       black: 'var(--black)',
       'black-opacity': 'var(--black-opacity)',
+      'material-primary': 'var(--material-primary)',
+      'material-primary-dark': 'var(--material-primary-dark)',
       gray: {
         0: 'var(--gray-0)',
         1: 'var(--gray-1)',
