@@ -1,22 +1,17 @@
-'use client'
+import Image from 'next/image'
 
-import { useAuthModal } from '~/modules/auth'
-import { useConfetti } from '~/modules/confetti'
-import { useUser } from '~/modules/user'
-import Button from '~/ui/button/Button'
-
-const Page = () => {
-  const { open } = useAuthModal()
-  const { runOnceConfetti } = useConfetti()
-  const { user } = useUser()
-
+const Home = () => {
   return (
-    <section className="container">
-      <Button label="open modal" onClick={open} />
-      <Button label="runOnceConfetti" onClick={runOnceConfetti} />
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-    </section>
+    <div>
+      <Image
+        src="https://images.pexels.com/photos/19985060/pexels-photo-19985060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt=""
+        quality={100}
+        priority
+        fill
+      />
+    </div>
   )
 }
 
-export default Page
+export default Home

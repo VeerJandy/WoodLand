@@ -36,7 +36,7 @@ const SignIn = forwardRef(() => {
 
       <Button
         type="submit"
-        label="common.create"
+        label="common.sign_in"
         className="mx-auto mt-4"
         loading={isLoading}
       />

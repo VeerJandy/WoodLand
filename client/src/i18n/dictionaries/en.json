@@ -26,6 +26,10 @@
     "is_agree_is_required": "You need to accept our terms and conditions",
     "exists_email": "Email already exists"
   },
+  "header": {
+    "home": "Home",
+    "catalog": "Catalog"
+  },
   "auth": {
     "modal_title": "Authentication",
     "already_have_account": "Already have an account?",

@@ -25,6 +25,10 @@
     "is_agree_is_required": "Ви повинні погодитися з умовами використання",
     "exists_email": "Email вже існує"
   },
+  "header": {
+    "home": "Головна",
+    "catalog": "Каталог"
+  },
   "auth": {
     "modal_title": "Авторизація",
     "already_have_account": "Вже маєте аккаунт?",

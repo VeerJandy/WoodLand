@@ -5,6 +5,10 @@ label, header {
   @include select-none;
 }
 
+li {
+  list-style: none;
+}
+
 // ===================================================================
 .lock {
   overflow: hidden;

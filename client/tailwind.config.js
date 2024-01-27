@@ -147,7 +147,11 @@ module.exports = {
       full: 'var(--border-radius-full)',
       circle: '50%'
     },
-    transitionDuration: {},
+    transitionDuration: {
+      0: '0s',
+      DEFAULT: 'var(--transition)',
+      low: 'var(--transition-low)'
+    },
     zIndex: {
       toast: 'var(--z-index-toast)',
       popup: 'var(--z-index-popup)',
