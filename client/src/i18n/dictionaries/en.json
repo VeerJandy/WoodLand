@@ -19,9 +19,12 @@
     "max_length_password": "Maximum 20 characters",
     "password_is_invalid": "Password is invalid",
     "passwords_dont_match": "Passwords don't match",
+    "spaces_not_allowed": "Spaces not allowed",
     "first_name_is_required": "First name is required",
+    "max_length_name": "Maximum 100 characters",
     "last_name_is_required": "Last name is required",
-    "is_agree_is_required": "You need to accept our terms and conditions"
+    "is_agree_is_required": "You need to accept our terms and conditions",
+    "exists_email": "Email already exists"
   },
   "auth": {
     "modal_title": "Authentication",

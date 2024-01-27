@@ -19,9 +19,11 @@
     "max_length_password": "Максимум 20 символів",
     "password_is_invalid": "Пароль некоректний",
     "passwords_dont_match": "Паролі не співпадають",
+    "spaces_not_allowed": "Пробіли не дозволені",
     "first_name_is_required": "Ім'я обов'язкове",
     "last_name_is_required": "Прізвище обов'язкове",
-    "is_agree_is_required": "Ви повинні погодитися з умовами використання"
+    "is_agree_is_required": "Ви повинні погодитися з умовами використання",
+    "exists_email": "Email вже існує"
   },
   "auth": {
     "modal_title": "Авторизація",

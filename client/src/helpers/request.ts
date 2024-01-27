@@ -1,6 +1,4 @@
-'use server'
-
-import { cookies } from 'next/headers'
+'use client'
 
 import HttpStatus from '~/enums/HttpStatusEnum'
 import { getDataForRequest, getUrlForRequest } from '~/helpers/util'
@@ -9,16 +7,19 @@ import type { MakeRequest } from '~/models/GlobalModels'
 
 export const request = async <T = any>(
   url: string,
-  { method = 'GET', data, requestOptions, next }: MakeRequest
+  params?: MakeRequest
 ): Promise<BackResponse<T>> => {
+  const method = params?.method ?? 'GET'
+  const data = params?.data ?? {}
+  const requestOptions = params?.requestOptions ?? {}
+  const next = params?.next ?? {}
+
   let urlForRequest = getUrlForRequest(url)
-  const cookie = cookies()
 
   const options: RequestInit = {
     method,
     headers: {
       'Content-Type': 'application/json',
-      Authorization: cookie.get('accessToken')?.value ?? '',
       credentials: 'include'
     }
   }
@@ -35,21 +36,13 @@ export const request = async <T = any>(
   })
   const result: BackResponse<T> = await response.json()
 
-  if (
-    result &&
-    result.statusCode === HttpStatus.UNAUTHORIZED &&
-    cookie.get('refreshToken')
-  ) {
-    // TODO Refresh tokens
+  if (result && result.statusCode === HttpStatus.UNAUTHORIZED) {
     const refreshResponse = await fetch(
-      `${process.env.BACKEND_HOST}/api/refresh`,
+      `${process.env.BACKEND_HOST}/api/auth/refresh`,
       {
         method: 'GET',
         headers: {
-          Cookie: cookie
-            .getAll()
-            .map(c => `${c.name}=${c.value}`)
-            .join('; '),
+          'Content-Type': 'application/json',
           credentials: 'include'
         }
       }

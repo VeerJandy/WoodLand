@@ -1,12 +1,12 @@
 import { SignUp } from '../models/AuthModel'
 
 export const signUpDefaultValues: SignUp = {
-  email: '',
-  password: '',
-  repeatPassword: '',
-  firstName: '',
-  lastName: '',
-  isAgree: false
+  email: 'wef@wc.com',
+  password: '123123q',
+  repeatPassword: '123123q',
+  firstName: '123123q',
+  lastName: '123123q',
+  isAgree: true
 }
 
 export const signInDefaultValues = {

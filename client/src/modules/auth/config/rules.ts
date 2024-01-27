@@ -15,14 +15,22 @@ export const signUpSchema: ZodType<SignUp> = object({
     .trim()
     .min(PASSWORD_MIN_LENGTH, 'min_length_password')
     .max(PASSWORD_MAX_LENGTH, 'max_length_password')
-    .regex(passwordValidation, 'password_is_invalid'),
+    .regex(passwordValidation, 'password_is_invalid')
+    .refine(s => !s.includes(' '), 'spaces_not_allowed'),
   repeatPassword: string()
     .trim()
     .min(PASSWORD_MIN_LENGTH, 'min_length_password')
     .max(PASSWORD_MAX_LENGTH, 'max_length_password')
-    .regex(passwordValidation, 'password_is_invalid'),
-  firstName: string().trim().min(1, 'first_name_is_required'),
-  lastName: string().trim().min(1, 'last_name_is_required'),
+    .regex(passwordValidation, 'password_is_invalid')
+    .refine(s => !s.includes(' '), 'spaces_not_allowed'),
+  firstName: string()
+    .trim()
+    .min(1, 'first_name_is_required')
+    .max(100, 'max_length_name'),
+  lastName: string()
+    .trim()
+    .min(1, 'last_name_is_required')
+    .max(100, 'max_length_name'),
   isAgree: boolean().refine(value => value, { message: 'is_agree_is_required' })
 }).refine(data => data.password === data.repeatPassword, {
   message: 'passwords_dont_match',

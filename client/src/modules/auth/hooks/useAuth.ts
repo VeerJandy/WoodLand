@@ -1,10 +1,14 @@
 'use client'
 
+import type { UseFormReturn } from 'react-hook-form'
+
 import { request } from '~/helpers/request'
+import setFormErrors from '~/helpers/setFormErrors'
 import useLoading from '~/hooks/useLoading'
 import { useConfetti } from '~/modules/confetti'
 import { useToast } from '~/modules/toast'
-import { UserModel, useUser } from '~/modules/user'
+import type { UserModel } from '~/modules/user'
+import { useUser } from '~/modules/user'
 
 import type { SignIn, SignUp } from '../models/AuthModel'
 import useAuthModal from './useAuthModal'
@@ -16,20 +20,28 @@ const useAuth = (url: string, isShowConfetti: boolean = false) => {
   const { close } = useAuthModal()
   const { signIn } = useUser()
 
-  const onSubmit = async (form: SignUp | SignIn) => {
+  const onSubmit = async (
+    formState: SignUp | SignIn,
+    { setError }: UseFormReturn
+  ) => {
     startLoading()
     try {
-      const { result, data } = await request<UserModel>(url, {
+      const { result, data, message } = await request<UserModel>(url, {
         method: 'POST',
-        data: form,
+        data: formState,
         next: { revalidate: 0 }
       })
 
-      if (result && data) {
+      if (!result) {
+        setFormErrors(message, setError)
+        stopLoading()
+        return
+      }
+
+      if (data) {
         signIn(data)
         close()
         isShowConfetti && runOnceConfetti()
-        return
       }
     } catch (e) {
       addErrorToast({

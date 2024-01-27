@@ -13,7 +13,7 @@ import type { ClassName } from '~/models/GlobalModels'
 
 interface FormProps {
   children: ReactNode
-  onSubmit: (form?: any) => unknown
+  onSubmit: (form: any, formContext: UseFormReturn) => unknown
   defaultValues: DefaultValues<any>
   rules: ZodType
   className?: ClassName
@@ -38,7 +38,7 @@ const Form = forwardRef(
         <form
           ref={ref}
           className={classNames(loading && 'pointer-events-none', className)}
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={form.handleSubmit(data => onSubmit(data, form))}
         >
           {children}
         </form>
