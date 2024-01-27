@@ -14,11 +14,11 @@
   transition: opacity var(--transition), background var(--transition), filter var(--transition), color var(--transition);
 
   border-radius: var(--border-radius);
-  background: var(--orange-4);
+  background: var(--orange-4) !important;
   color: var(--white);
 
   &:hover {
-    background: var(--orange-5);
+    background: var(--orange-5) !important;
   }
 
   &:active {
@@ -27,23 +27,23 @@
 
   // BG
   &__white {
-    background: var(--white-opacity);
+    background: var(--white-opacity) !important;
     @include blur;
     color: var(--black);
 
     &:hover {
-      background: var(--white);
+      background: var(--white) !important;
     }
   }
 
   &__transparent {
-    background: transparent;
+    background: transparent !important;
     border: none;
     color: inherit;
     transition: none;
 
     &:hover {
-      background: transparent;
+      background: transparent !important;
     }
   }
 

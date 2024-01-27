@@ -20,7 +20,7 @@ const SignUp = forwardRef(() => {
   const {
     functions: { close, onSubmit },
     state: { isLoading }
-  } = useAuth('/auth/signup', true)
+  } = useAuth('/auth/sign-up', true)
 
   return (
     <MotionForm

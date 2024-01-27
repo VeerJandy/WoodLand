@@ -3,18 +3,16 @@ import { type ReactNode } from 'react'
 
 import { durationMedium, durationSmall, easeMedium } from '~/consts/Animate'
 
-import ContentEnum from '../enums/ContentEnum'
 import useHeader from '../hooks/useHeader'
 
 interface HeaderButtonProps {
   icon: ReactNode
-  content: ContentEnum
+  onClick?: (args?: unknown) => void
 }
 
-const HeaderButton = ({ icon, content }: HeaderButtonProps) => {
+const HeaderButton = ({ icon, onClick }: HeaderButtonProps) => {
   const {
-    state: { isOpen, isMobile },
-    functions: { onSetContent }
+    state: { isOpen, isMobile }
   } = useHeader()
 
   return (
@@ -26,7 +24,7 @@ const HeaderButton = ({ icon, content }: HeaderButtonProps) => {
       }}
       role="button"
       className="relative z-medium flex size-12 items-center justify-center"
-      onClick={() => onSetContent(content)}
+      onClick={onClick}
     >
       {icon}
     </motion.div>

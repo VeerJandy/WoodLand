@@ -65,4 +65,11 @@ export class UserService {
 
     return user
   }
+
+  public async me(id: string): Promise<UserDto | null> {
+    const user = await this.findByEmailOrId(id)
+
+    if (user) return this.getUserForClient(user)
+    return null
+  }
 }

@@ -26,10 +26,13 @@ export function off<T extends Window | Document | HTMLElement | EventTarget>(
 
 export const isBrowser = typeof window !== 'undefined'
 
+export const isIncludeHttps = (url: string): boolean =>
+  url.includes('http') || url.includes('https')
+
 export function getUrlForRequest(url: string): string {
   let urlForRequest: string
 
-  if (url.includes('http') || url.includes('https')) {
+  if (isIncludeHttps(url)) {
     urlForRequest = url
   } else {
     if (url.slice(0, 1) === '/') {
@@ -38,7 +41,7 @@ export function getUrlForRequest(url: string): string {
       urlForRequest = `/api/${url}`
     }
 
-    if (process && process.env.BACKEND_HOST) {
+    if (process && process.env.BACKEND_HOST && !isIncludeHttps(url)) {
       urlForRequest = process.env.BACKEND_HOST + urlForRequest
     }
   }

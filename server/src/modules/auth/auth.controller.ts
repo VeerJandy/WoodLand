@@ -27,7 +27,7 @@ export class AuthController {
   ) {}
 
   @Public()
-  @Post('/signup')
+  @Post('/sign-up')
   @UsePipes(ValidationPipe)
   async signup(
     @Body() form: SignupDto,
@@ -56,7 +56,7 @@ export class AuthController {
   }
 
   @Public()
-  @Post('/signin')
+  @Post('/sign-in')
   @UsePipes(ValidationPipe)
   async signin(
     @Body() form: SigninDto,
@@ -84,7 +84,8 @@ export class AuthController {
     }
   }
 
-  @Get('/signout')
+  @Public()
+  @Get('/sign-out')
   async signout(
     @Cookie(REFRESH_TOKEN) refreshToken: string,
     @Res({ passthrough: true }) res: Response
@@ -112,6 +113,7 @@ export class AuthController {
     }
   }
 
+  @Public()
   @Get('/refresh-tokens')
   async refreshTokens(
     @Cookie(REFRESH_TOKEN) refreshToken: string,

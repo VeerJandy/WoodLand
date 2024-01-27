@@ -19,7 +19,10 @@ export class TokenService {
 
   private getAccessToken(user: UserForCreateToken): string {
     // If token should be with "Bearer" - change "extractJWT" method in JwtStrategy to req.cookies.accessToken.split(' ')[1]
-    return this.jwtService.sign(user)
+    return this.jwtService.sign(user, {
+      expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME,
+      secret: process.env.JWT_ACCESS_SECRET
+    })
   }
 
   private async getRefreshToken(

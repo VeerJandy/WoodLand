@@ -9,7 +9,8 @@
     "info": "Info",
     "success": "Success",
     "error": "Error",
-    "warning": "Warning"
+    "warning": "Warning",
+    "settings": "Settings"
   },
   "errors": {
     "something_went_wrong": "Something went wrong",
@@ -24,11 +25,16 @@
     "max_length_name": "Maximum 100 characters",
     "last_name_is_required": "Last name is required",
     "is_agree_is_required": "You need to accept our terms and conditions",
-    "exists_email": "Email already exists"
+    "exists_email": "Email already exists",
+    "wrong_email_or_password": "Wrong email or password"
   },
   "header": {
     "home": "Home",
-    "catalog": "Catalog"
+    "catalog": "Catalog",
+    "sign_out": "Sign out",
+    "light_theme": "Light",
+    "dark_theme": "Dark",
+    "system_theme": "System"
   },
   "auth": {
     "modal_title": "Authentication",

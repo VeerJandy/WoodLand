@@ -4,7 +4,7 @@
   &__wrapper {
     position: absolute;
     z-index: var(--z-index-medium);
-    //transform: translateX(-50%);
+    transform: translateX(-50%);
     background: var(--material-primary);
     min-width: 10rem;
     padding: 0.5rem;

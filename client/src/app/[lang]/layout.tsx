@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { ReactNode } from 'react'
 
+import { requestServer } from '~/helpers/requestServer'
 import type { Locale } from '~/i18n/i18n'
 import { Auth } from '~/modules/auth'
 import { Header } from '~/modules/header'
@@ -33,11 +34,12 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
     process.cwd() + `/src/i18n/dictionaries/${params.lang}.json`,
     'utf8'
   )
+  const { data: user } = await requestServer('/user/me')
 
   return (
     <html lang={params.lang} className={font.className} data-theme="dark">
       <body className="scroll-bar bg-gray-0 text-black transition-colors dark:bg-black dark:text-white">
-        <Providers dictionary={dictionary}>
+        <Providers dictionary={dictionary} user={user}>
           <Header />
           <main>{children}</main>
 

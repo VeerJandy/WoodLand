@@ -9,7 +9,8 @@
     "info": "Інформація",
     "success": "Успіх",
     "error": "Помилка",
-    "warning": "Попередження"
+    "warning": "Попередження",
+    "settings": "Налаштування"
   },
   "errors": {
     "something_went_wrong": "Щось пішло не так",
@@ -23,11 +24,16 @@
     "first_name_is_required": "Ім'я обов'язкове",
     "last_name_is_required": "Прізвище обов'язкове",
     "is_agree_is_required": "Ви повинні погодитися з умовами використання",
-    "exists_email": "Email вже існує"
+    "exists_email": "Email вже існує",
+    "wrong_email_or_password": "Невірний email або пароль"
   },
   "header": {
     "home": "Головна",
-    "catalog": "Каталог"
+    "catalog": "Каталог",
+    "sign_out": "Вийти",
+    "light_theme": "Світла",
+    "dark_theme": "Темна",
+    "system_theme": "Системна"
   },
   "auth": {
     "modal_title": "Авторизація",

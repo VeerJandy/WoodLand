@@ -37,20 +37,17 @@ export const request = async <T = any>(
   const result: BackResponse<T> = await response.json()
 
   if (result && result.statusCode === HttpStatus.UNAUTHORIZED) {
-    const refreshResponse = await fetch(
-      `${process.env.BACKEND_HOST}/api/auth/refresh`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          credentials: 'include'
-        }
+    const refreshResponse = await fetch('/api/auth/refresh-tokens', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        credentials: 'include'
       }
-    )
+    })
     const refreshResult: BackResponse = await refreshResponse.json()
 
     if (refreshResult.result) {
-      await request(url, {
+      return request(url, {
         method,
         data,
         requestOptions,

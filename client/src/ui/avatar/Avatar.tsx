@@ -10,12 +10,15 @@ export interface AvatarProps {
   alt?: string
   bordered?: boolean
   color?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger'
+  size?: 'sm'
 }
 
-const Avatar = ({ src, name, alt, bordered, color }: AvatarProps) => (
+const Avatar = ({ src, name, alt, bordered, color, size }: AvatarProps) => (
   <div
     className={classNames(
-      'relative flex size-10 items-center justify-center rounded-full bg-white dark:bg-gray-8',
+      'relative flex items-center justify-center rounded-full bg-white dark:bg-gray-8',
+      size === 'sm' && 'size-8',
+      !size && 'size-10',
       bordered &&
         'ring-2 ring-offset-2 ring-offset-white dark:ring-offset-black',
       bordered && (!color || color === 'default') && 'ring-gray-4',
@@ -34,6 +37,7 @@ const Avatar = ({ src, name, alt, bordered, color }: AvatarProps) => (
         sizes="(40px, 40px)"
         quality={100}
         className="z-one"
+        priority
       />
     )}
     {name ? (

@@ -13,7 +13,7 @@ import ToggleForms from './ToggleForms'
 
 const Auth = () => {
   const { isOpen, close } = useAuthModal()
-  const [isShowSignUpForm, toggleSignUpForm] = useToggle(true) // TODO: remove "true"
+  const [isShowSignUpForm, toggleSignUpForm] = useToggle()
 
   return (
     <Modal title="auth.modal_title" isOpen={isOpen} onClose={close}>
