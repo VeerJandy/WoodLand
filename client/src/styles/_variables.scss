@@ -7,7 +7,9 @@
   --black: #000;
   --black-opacity: rgba(0, 0, 0, 0.8);
   --material-primary: #FFF;
+  --material-primary-hover: #F2F2F2;
   --material-primary-dark: #161b22;
+  --material-primary-dark-hover: #0d1117;
   --gray-0: #f0f6fc;
   --gray-1: #c9d1d9;
   --gray-2: #b1bac4;
@@ -102,12 +104,15 @@
 
 @include darkTheme {
   --material-primary: #161b22;
+  --material-primary-hover: #0d1117;
   --material-primary-dark: #FFF;
+  --material-primary-dark-hover: #F2F2F2;
 }
 
 // ====================================================================================
 // Border radius
 :root {
+  --border-radius-low: 0.25rem;
   --border-radius: 0.5rem;
   --border-radius-medium: 0.75rem;
   --border-radius-full: 999rem;

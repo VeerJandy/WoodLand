@@ -144,6 +144,7 @@ module.exports = {
     },
     borderRadius: {
       none: '0',
+      low: 'var(--border-radius-low)',
       DEFAULT: 'var(--border-radius)',
       full: 'var(--border-radius-full)',
       circle: '50%'
