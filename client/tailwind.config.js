@@ -26,6 +26,7 @@ module.exports = {
       small: ['var(--small)', 'var(--lh-small)']
     },
     colors: {
+      transparent: 'transparent',
       white: 'var(--white)',
       'white-opacity': 'var(--white-opacity)',
       black: 'var(--black)',

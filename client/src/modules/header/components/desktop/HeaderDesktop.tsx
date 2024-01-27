@@ -6,6 +6,7 @@ import useHeader from '../../hooks/useHeader'
 import styles from '../../styles/Header.module.scss'
 import Logo from './Logo'
 import Menu from './Menu'
+import Settings from './Settings'
 
 const HeaderDesktop = () => {
   const {
@@ -25,6 +26,7 @@ const HeaderDesktop = () => {
       <div className="container flex h-12 justify-between gap-4">
         <Logo />
         <Menu />
+        <Settings />
       </div>
     </motion.header>
   )
