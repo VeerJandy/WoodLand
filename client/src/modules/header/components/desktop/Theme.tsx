@@ -12,7 +12,7 @@ const Theme = () => {
   } = useTheme()
 
   return (
-    <Dropdown>
+    <Dropdown hover>
       <HeaderButton icon={<IconTheme />} />
 
       {ThemeList.map((theme, index) => (

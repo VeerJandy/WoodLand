@@ -15,7 +15,7 @@ const AuthInfo = () => {
   return (
     <div className="ml-2">
       {user ? (
-        <Dropdown>
+        <Dropdown hover>
           <div className="flex h-12 items-center">
             <User
               avatarProps={{

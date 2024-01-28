@@ -12,7 +12,7 @@ const Language = () => {
   } = useLanguage()
 
   return (
-    <Dropdown>
+    <Dropdown hover>
       <HeaderButton icon={<IconLanguage />} />
 
       {LanguageList.map((language, index) => (
