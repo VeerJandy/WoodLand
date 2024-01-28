@@ -29,9 +29,7 @@ const useTheme = () => {
 
   return {
     state: { theme },
-    functions: {
-      onSetTheme
-    }
+    functions: { setTheme: onSetTheme }
   }
 }
 

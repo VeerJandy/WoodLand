@@ -10,12 +10,12 @@ import HeaderList from '../HeaderList'
 const Menu = () => {
   const {
     state: { isOpen, content },
-    functions: { onSetContent }
+    functions: { setContent }
   } = useHeader()
 
   return (
     <AnimatePresence mode="popLayout">
-      {isOpen && content && ContentEnum.Menu && (
+      {isOpen && content === ContentEnum.Menu && (
         <HeaderList>
           {MenuList.map(menuItem => (
             <AppLink
@@ -23,7 +23,7 @@ const Menu = () => {
               key={menuItem.link}
               label={menuItem.title}
               className="flex px-8 py-2"
-              onClick={() => onSetContent(null)}
+              onClick={() => setContent(null)}
             />
           ))}
         </HeaderList>

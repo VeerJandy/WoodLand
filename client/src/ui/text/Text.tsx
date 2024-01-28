@@ -12,6 +12,7 @@ interface TextOwnProps<E extends Element = Element> {
   label: string
   as?: E
   className?: ClassName
+  onClick?: () => unknown
 }
 
 export type TextProps<E extends Element> = TextOwnProps<E> &
@@ -22,13 +23,16 @@ const defaultElement = 'p'
 const Text = <E extends Element = typeof defaultElement>({
   label,
   as,
-  className
+  className,
+  onClick
 }: TextProps<E>) => {
   const t = useTranslation()
   const TagName = as || Fragment
 
   return as ? (
-    <TagName className={classNames(className)}>{t(label)}</TagName>
+    <TagName className={classNames(className)} onClick={onClick}>
+      {t(label)}
+    </TagName>
   ) : (
     <>{t(label)}</>
   )

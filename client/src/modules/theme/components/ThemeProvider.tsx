@@ -16,7 +16,7 @@ interface ThemeProviderProps {
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const {
-    functions: { onSetTheme }
+    functions: { setTheme }
   } = useTheme()
   const [themeInStorage] = useLocalStorage<ThemeModel>('theme', null)
   const setAttribute = useHtmlAttribute('html')
@@ -24,13 +24,13 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   useEffect(() => {
     if (themeInStorage) {
       setAttribute('data-theme', themeInStorage)
-      onSetTheme(themeInStorage)
+      setTheme(themeInStorage)
     } else {
       const matchMedia = window.matchMedia('(prefers-color-scheme: dark)')
       const newTheme: ThemeModel = matchMedia.matches ? 'dark' : 'light'
 
       setAttribute('data-theme', newTheme)
-      onSetTheme(newTheme)
+      setTheme(newTheme)
     }
   }, [])
 

@@ -6,7 +6,7 @@ import useHeader from '../../hooks/useHeader'
 const Burger = () => {
   const {
     state: { isOpen },
-    functions: { onSetContent }
+    functions: { setContent }
   } = useHeader()
 
   const [isFirstRender, setIsFirstRender] = useState(true)
@@ -33,7 +33,7 @@ const Burger = () => {
     <div
       role="button"
       className="relative z-medium flex size-12 items-center justify-center"
-      onClick={() => onSetContent(ContentEnum.Menu)}
+      onClick={() => setContent(ContentEnum.Menu)}
     >
       <svg width="18" height="18" viewBox="0 0 18 18">
         <polyline

@@ -1,6 +1,6 @@
 import RouterEnum from '~/enums/RouterEnum'
 
-import { MenuModel } from '../models/MenuModel'
+import type { MenuModel } from '../models/MenuModel'
 
 const MenuList: MenuModel[] = [
   {

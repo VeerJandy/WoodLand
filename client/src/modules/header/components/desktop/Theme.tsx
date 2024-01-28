@@ -3,29 +3,25 @@ import Dropdown from '~/ui/dropdown/Dropdown'
 import DropdownItem from '~/ui/dropdown/DropdownItem'
 import IconTheme from '~/ui/icons/IconTheme'
 
+import ThemeList from '../../consts/ThemeList'
 import HeaderButton from '../HeaderButton'
 
 const Theme = () => {
   const {
-    functions: { onSetTheme }
+    functions: { setTheme }
   } = useTheme()
 
   return (
     <Dropdown>
       <HeaderButton icon={<IconTheme />} />
 
-      <DropdownItem
-        label="header.light_theme"
-        onClick={() => onSetTheme('light')}
-      />
-      <DropdownItem
-        label="header.dark_theme"
-        onClick={() => onSetTheme('dark')}
-      />
-      <DropdownItem
-        label="header.system_theme"
-        onClick={() => onSetTheme(null)}
-      />
+      {ThemeList.map((theme, index) => (
+        <DropdownItem
+          key={index}
+          label={theme.title}
+          onClick={() => setTheme(theme.value)}
+        />
+      ))}
     </Dropdown>
   )
 }

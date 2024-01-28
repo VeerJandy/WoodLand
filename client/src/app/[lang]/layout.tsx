@@ -34,7 +34,9 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
     process.cwd() + `/src/i18n/dictionaries/${params.lang}.json`,
     'utf8'
   )
-  const { data: user } = await requestServer('/user/me')
+  const { data: user } = await requestServer('/user/me', {
+    next: { revalidate: 0 }
+  })
 
   return (
     <html lang={params.lang} className={font.className} data-theme="dark">

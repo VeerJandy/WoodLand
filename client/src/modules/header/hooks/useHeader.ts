@@ -34,7 +34,7 @@ const useHeader = () => {
 
   return {
     state: { isOpen, content, isMobile },
-    functions: { setIsOpen, onSetContent }
+    functions: { setIsOpen, setContent: onSetContent }
   }
 }
 

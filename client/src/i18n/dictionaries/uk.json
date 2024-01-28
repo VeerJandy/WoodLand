@@ -33,7 +33,9 @@
     "sign_out": "Вийти",
     "light_theme": "Світла",
     "dark_theme": "Темна",
-    "system_theme": "Системна"
+    "system_theme": "Системна",
+    "language_uk": "Українська",
+    "language_en": "Англійська"
   },
   "auth": {
     "modal_title": "Авторизація",

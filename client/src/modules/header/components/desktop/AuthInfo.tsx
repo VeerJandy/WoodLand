@@ -13,17 +13,19 @@ const AuthInfo = () => {
   const { open: openAuthModal } = useAuthModal()
 
   return (
-    <div>
+    <div className="ml-2">
       {user ? (
         <Dropdown>
-          <User
-            avatarProps={{
-              src: user.avatar,
-              alt: 'My avatar',
-              size: 'sm'
-            }}
-            name={user.name.firstName}
-          />
+          <div className="flex h-12 items-center">
+            <User
+              avatarProps={{
+                src: user.avatar,
+                alt: 'My avatar',
+                size: 'sm'
+              }}
+              name={user.name.firstName}
+            />
+          </div>
 
           <DropdownItem
             label="common.settings"

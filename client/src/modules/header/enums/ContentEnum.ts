@@ -1,5 +1,7 @@
 enum ContentEnum {
-  Menu = 'Menu'
+  Menu = 'Menu',
+  Language = 'Language',
+  Theme = 'Theme'
 }
 
 export default ContentEnum

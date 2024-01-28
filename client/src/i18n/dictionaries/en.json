@@ -34,7 +34,9 @@
     "sign_out": "Sign out",
     "light_theme": "Light",
     "dark_theme": "Dark",
-    "system_theme": "System"
+    "system_theme": "System",
+    "language_uk": "Ukrainian",
+    "language_en": "English"
   },
   "auth": {
     "modal_title": "Authentication",
