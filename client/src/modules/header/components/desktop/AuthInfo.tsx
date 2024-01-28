@@ -1,6 +1,7 @@
 import RouterEnum from '~/enums/RouterEnum'
 import { useAuthModal } from '~/modules/auth'
 import { useUser } from '~/modules/user'
+import AppLink from '~/ui/app-link/AppLink'
 import Button from '~/ui/button/Button'
 import Dropdown from '~/ui/dropdown/Dropdown'
 import DropdownItem from '~/ui/dropdown/DropdownItem'
@@ -16,7 +17,7 @@ const AuthInfo = () => {
     <div className="ml-2">
       {user ? (
         <Dropdown hover>
-          <div className="flex h-12 items-center">
+          <AppLink href={RouterEnum.Profile} className="flex h-12 items-center">
             <User
               avatarProps={{
                 src: user.avatar,
@@ -25,12 +26,12 @@ const AuthInfo = () => {
               }}
               name={user.name.firstName}
             />
-          </div>
+          </AppLink>
 
           <DropdownItem
             label="common.settings"
             iconStart={<IconSettings size="14" />}
-            href={RouterEnum.Settings}
+            href={RouterEnum.ProfileSettings}
           />
           <DropdownItem
             label="header.sign_out"

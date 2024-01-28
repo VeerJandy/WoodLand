@@ -4,7 +4,8 @@ enum RouterEnum {
   Terms = '/terms',
   Catalog = '/catalog',
 
-  Settings = '/settings',
+  Profile = '/profile',
+  ProfileSettings = '/profile/settings',
   Admin = '/admin',
   SuperAdmin = '/super-admin'
 }
