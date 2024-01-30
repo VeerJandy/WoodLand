@@ -1,3 +1,4 @@
+import setBodyLock from '~/helpers/setBodyLock'
 import useAdaptiveStore from '~/store/adaptiveStore'
 
 import ContentEnum from '../enums/ContentEnum'
@@ -16,6 +17,7 @@ const useHeader = () => {
     if (isMobile) {
       setContent(isOpen ? null : newContent)
       setIsOpen()
+      setBodyLock(!isOpen)
       return
     }
 

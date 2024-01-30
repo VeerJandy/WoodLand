@@ -1,11 +1,17 @@
 'use server'
 
-import { request } from '~/helpers/request'
+import { requestServer } from '~/helpers/requestServer'
 
 import type UserModel from '../models/UserModel'
 
 export const getUser = async (): Promise<UserModel | null> => {
-  const { data } = await request('/user/me')
+  try {
+    const { data: user } = await requestServer('/user/me', {
+      next: { revalidate: 0 }
+    })
 
-  return data
+    return user
+  } catch (e) {
+    return null
+  }
 }

@@ -5,11 +5,12 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { ReactNode } from 'react'
 
-import { requestServer } from '~/helpers/requestServer'
 import type { Locale } from '~/i18n/i18n'
 import { Auth } from '~/modules/auth'
+import { Footer } from '~/modules/footer'
 import { Header } from '~/modules/header'
 import { Toast } from '~/modules/toast'
+import { getUser } from '~/modules/user'
 
 import Providers from './providers'
 
@@ -34,9 +35,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
     process.cwd() + `/src/i18n/dictionaries/${params.lang}.json`,
     'utf8'
   )
-  const { data: user } = await requestServer('/user/me', {
-    next: { revalidate: 0 }
-  })
+  const user = await getUser()
 
   return (
     <html lang={params.lang} className={font.className} data-theme="dark">
@@ -44,6 +43,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
         <Providers dictionary={dictionary} user={user}>
           <Header />
           <main>{children}</main>
+          <Footer />
 
           <Auth />
           <Toast />

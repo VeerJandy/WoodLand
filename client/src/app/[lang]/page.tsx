@@ -1,16 +1,20 @@
-import Image from 'next/image'
+import useDeviceDetect from '~/hooks/useDeviceDetect'
+
+import About from './home/components/about/About'
+import Banner from './home/components/Banner'
+import Novelty from './home/components/novelty/Novelty'
+import Popular from './home/components/popular/Popular'
 
 const Home = () => {
+  const isMobile = useDeviceDetect()
+
   return (
-    <div>
-      <Image
-        src="https://images.pexels.com/photos/19985060/pexels-photo-19985060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        alt=""
-        quality={100}
-        priority
-        fill
-      />
-    </div>
+    <>
+      <Banner />
+      <About isMobile={isMobile} />
+      <Novelty />
+      <Popular />
+    </>
   )
 }
 

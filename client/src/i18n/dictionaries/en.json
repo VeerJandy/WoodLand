@@ -45,5 +45,15 @@
     "don't_have_account": "Don't have an account?",
     "is_agree_text": "Agree with",
     "is_agree_link": "terms and conditions"
+  },
+  "home":  {
+    "about": {
+      "scroll_title_1": "Our Story: From Tree to Home",
+      "scroll_title_2": "Woodcraft Mastery: Our Unique Furniture",
+      "scroll_title_3": "Preserving the Warmth of Nature: The Story of Our Store",
+      "scroll_title_4": "Wooden Elegance: Foundations of Our Store",
+      "scroll_title_5": "Craftsmen of Wooden Artistry: Insights Into Our Team",
+      "scroll_title_6": "Wooden World: Where Art Meets Comfort"
+    }
   }
 }
