@@ -10,7 +10,8 @@
     "success": "Success",
     "error": "Error",
     "warning": "Warning",
-    "settings": "Settings"
+    "settings": "Settings",
+    "hello": "Hello"
   },
   "errors": {
     "something_went_wrong": "Something went wrong",

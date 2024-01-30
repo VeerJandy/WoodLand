@@ -4,7 +4,7 @@ import Theme from './Theme'
 
 const Settings = () => {
   return (
-    <nav className="flex items-center justify-center">
+    <nav className="flex items-center justify-end">
       <Language />
       <Theme />
       <AuthInfo />

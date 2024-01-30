@@ -10,7 +10,8 @@
     "success": "Успіх",
     "error": "Помилка",
     "warning": "Попередження",
-    "settings": "Налаштування"
+    "settings": "Налаштування",
+    "hello": "Привіт"
   },
   "errors": {
     "something_went_wrong": "Щось пішло не так",

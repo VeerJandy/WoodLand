@@ -23,7 +23,7 @@ const HeaderDesktop = () => {
       }}
       className={styles.header}
     >
-      <div className="container flex h-12 justify-between gap-4">
+      <div className="container grid h-12 grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] gap-4">
         <Logo />
         <Menu />
         <Settings />

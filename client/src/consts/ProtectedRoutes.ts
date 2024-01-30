@@ -14,5 +14,9 @@ export const protectedRoutes: ProtectedRoute[] = [
   {
     route: RouterEnum.SuperAdmin,
     role: UserRoleEnum.SuperAdmin
+  },
+  {
+    route: RouterEnum.Profile,
+    role: UserRoleEnum.User
   }
 ]

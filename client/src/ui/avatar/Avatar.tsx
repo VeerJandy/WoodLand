@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { memo } from 'react'
 
+import type { ClassName } from '~/models/GlobalModels'
 import IconUser from '~/ui/icons/IconUser'
 
 export interface AvatarProps {
@@ -11,9 +12,18 @@ export interface AvatarProps {
   bordered?: boolean
   color?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger'
   size?: 'sm'
+  className?: ClassName
 }
 
-const Avatar = ({ src, name, alt, bordered, color, size }: AvatarProps) => (
+const Avatar = ({
+  src,
+  name,
+  alt,
+  bordered,
+  color,
+  size,
+  className
+}: AvatarProps) => (
   <div
     className={classNames(
       'relative flex items-center justify-center rounded-full bg-white dark:bg-gray-8',
@@ -26,7 +36,8 @@ const Avatar = ({ src, name, alt, bordered, color, size }: AvatarProps) => (
       bordered && color === 'secondary' && 'ring-purple-4',
       bordered && color === 'success' && 'ring-green-4',
       bordered && color === 'warning' && 'ring-orange-4',
-      bordered && color === 'danger' && 'ring-red-4'
+      bordered && color === 'danger' && 'ring-red-4',
+      className
     )}
   >
     {src && (
