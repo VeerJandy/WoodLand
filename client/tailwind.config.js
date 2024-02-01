@@ -29,6 +29,13 @@ module.exports = {
       transparent: 'transparent',
       white: 'var(--white)',
       'white-opacity': 'var(--white-opacity)',
+      'white-opacity-2': 'var(--white-opacity-2)',
+      'white-opacity-3': 'var(--white-opacity-3)',
+      'white-opacity-4': 'var(--white-opacity-4)',
+      'white-opacity-5': 'var(--white-opacity-5)',
+      'white-opacity-6': 'var(--white-opacity-6)',
+      'white-opacity-7': 'var(--white-opacity-7)',
+      'white-opacity-8': 'var(--white-opacity-8)',
       black: 'var(--black)',
       'black-opacity': 'var(--black-opacity)',
       'material-primary': 'var(--material-primary)',
@@ -154,7 +161,8 @@ module.exports = {
     transitionDuration: {
       0: '0s',
       DEFAULT: 'var(--transition)',
-      low: 'var(--transition-low)'
+      low: 'var(--transition-low)',
+      medium: 'var(--transition-medium)'
     },
     zIndex: {
       toast: 'var(--z-index-toast)',

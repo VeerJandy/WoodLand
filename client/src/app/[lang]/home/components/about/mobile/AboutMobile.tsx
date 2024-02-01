@@ -1,21 +1,26 @@
 import AnimateWrapper from '~/ui/animate-wrapper/AnimateWrapper'
 import Text from '~/ui/text/Text'
 
+import AboutList from '../../../consts/AboutList'
+import Card from '../Card'
+
 const AboutMobile = () => (
   <section className="container">
-    {Array.from({ length: 6 }).map((_, index) => (
+    {AboutList.map(({ id, title, card }) => (
       <AnimateWrapper
-        key={index}
+        key={id}
         whileInView
         className="py-8"
         variant="yAndOpacity"
+        margin="-250px"
+        once
       >
         <Text
           as="h3"
-          label={`home.about.scroll_title_${index + 1}`}
+          label={title}
           className="h3 text-center font-bold text-gray-6 dark:text-gray-2"
         />
-        <div className="mt-4 aspect-square rounded-big bg-gradient-to-br from-gray-0 to-coral-4" />
+        <Card {...card} />
       </AnimateWrapper>
     ))}
   </section>

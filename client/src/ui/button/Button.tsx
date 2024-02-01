@@ -12,8 +12,8 @@ import styles from './Button.module.scss'
 export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   className?: ClassName
-  background?: 'white' | 'transparent'
-  size?: 'small' | 'circle' | 'empty'
+  background?: 'white' | 'blur' | 'transparent'
+  size?: 'big' | 'small' | 'circle' | 'empty'
   rounded?: boolean
   loading?: boolean
   disabled?: boolean

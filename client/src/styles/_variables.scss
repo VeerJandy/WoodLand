@@ -4,6 +4,13 @@
 :root {
   --white: #FFF;
   --white-opacity: rgba(255, 255, 255, 0.8);
+  --white-opacity-2: rgba(255, 255, 255, 0.7);
+  --white-opacity-3: rgba(255, 255, 255, 0.6);
+  --white-opacity-4: rgba(255, 255, 255, 0.5);
+  --white-opacity-5: rgba(255, 255, 255, 0.4);
+  --white-opacity-6: rgba(255, 255, 255, 0.3);
+  --white-opacity-7: rgba(255, 255, 255, 0.2);
+  --white-opacity-8: rgba(255, 255, 255, 0.1);
   --black: #000;
   --black-opacity: rgba(0, 0, 0, 0.8);
   --material-primary: #FFF;
@@ -124,6 +131,7 @@
 :root {
   --transition-low: 0.2s;
   --transition: 0.3s;
+  --transition-medium: 0.422s;
 }
 
 // ====================================================================================
@@ -144,4 +152,6 @@
 // Other
 :root {
   --field-height: 2rem;
+  --field-height-small: 1.5rem;
+  --field-height-big: 2.5rem;
 }

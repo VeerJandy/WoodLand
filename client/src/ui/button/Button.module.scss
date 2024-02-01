@@ -36,6 +36,18 @@
     }
   }
 
+  // BG
+  &__blur {
+    background: var(--white-opacity-6) !important;
+    @include blur;
+    color: var(--white);
+    transition: var(--transition);
+
+    &:hover {
+      background: var(--white-opacity-4) !important;
+    }
+  }
+
   &__transparent {
     background: transparent !important;
     border: none;
@@ -50,6 +62,12 @@
   // Sizes
   &__rounded {
     border-radius: var(--border-radius-full);
+  }
+
+  &__big {
+    height: var(--field-height-big);
+    border-radius: var(--border-radius-full);
+    padding-inline: 1.5rem;
   }
 
   &__small {

@@ -11,7 +11,8 @@
     "error": "Error",
     "warning": "Warning",
     "settings": "Settings",
-    "hello": "Hello"
+    "hello": "Hello",
+    "read_more": "Read more"
   },
   "errors": {
     "something_went_wrong": "Something went wrong",
@@ -46,14 +47,26 @@
     "is_agree_text": "Agree with",
     "is_agree_link": "terms and conditions"
   },
-  "home":  {
+  "home": {
     "about": {
       "scroll_title_1": "Our Story: From Tree to Home",
+      "card_title_1": "Our Story",
+      "card_subtitle_1": "Our Story",
       "scroll_title_2": "Woodcraft Mastery: Our Unique Furniture",
+      "card_title_2": "Woodcraft Mastery",
+      "card_subtitle_2": "Woodcraft Mastery",
       "scroll_title_3": "Preserving the Warmth of Nature: The Story of Our Store",
+      "card_title_3": "Preserving the Warmth of Nature",
+      "card_subtitle_3": "Preserving the Warmth of Nature",
       "scroll_title_4": "Wooden Elegance: Foundations of Our Store",
+      "card_title_4": "Wooden Elegance",
+      "card_subtitle_4": "Wooden Elegance",
       "scroll_title_5": "Craftsmen of Wooden Artistry: Insights Into Our Team",
-      "scroll_title_6": "Wooden World: Where Art Meets Comfort"
+      "card_title_5": "Wooden Artistry",
+      "card_subtitle_5": "Craftsmen of Wooden Artistry",
+      "scroll_title_6": "Wooden World: Where Art Meets Comfort",
+      "card_title_6": "Wooden World",
+      "card_subtitle_6": "Wooden World"
     }
   }
 }
