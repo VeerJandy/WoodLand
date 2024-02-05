@@ -17,7 +17,9 @@ const useHeader = () => {
     if (isMobile) {
       setContent(isOpen ? null : newContent)
       setIsOpen()
-      setBodyLock(!isOpen)
+      setBodyLock({
+        isLockBody: !isOpen
+      })
       return
     }
 

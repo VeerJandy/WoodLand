@@ -3,23 +3,18 @@
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import {
-  type ForwardedRef,
-  forwardRef,
-  memo,
-  type ReactNode,
-  useMemo
-} from 'react'
-import { UrlObject } from 'url'
+import type { ForwardedRef, ReactNode } from 'react'
+import { forwardRef, memo } from 'react'
 
-import RouterEnum from '~/enums/RouterEnum'
 import type { ClassName } from '~/models/GlobalModels'
-import Button, { ButtonProps } from '~/ui/button/Button'
+import type { ButtonProps } from '~/ui/button/Button'
+import Button from '~/ui/button/Button'
 import Text from '~/ui/text/Text'
 
-interface AppLinkProps {
-  href: RouterEnum | UrlObject | string
+import type { UseAppList } from './hooks/useAppList'
+import useAppList from './hooks/useAppList'
+
+interface AppLinkProps extends UseAppList {
   children?: ReactNode
   className?: ClassName
   button?: boolean
@@ -41,22 +36,9 @@ const AppLink = forwardRef(
     }: AppLinkProps,
     ref: ForwardedRef<HTMLAnchorElement>
   ) => {
-    const pathname = usePathname()
-
-    const newHref = useMemo(() => {
-      const locale = pathname.slice(0, 3)
-
-      if (typeof href === 'string')
-        return href[0] === '/' ? `${locale}${href}` : `${locale}/${href}`
-
-      return {
-        ...href,
-        pathname:
-          href.pathname && href.pathname[0] === '/'
-            ? `${locale}${href.pathname}`
-            : `${locale}/${href.pathname}`
-      }
-    }, [href])
+    const {
+      state: { newHref }
+    } = useAppList({ href })
 
     return (
       <Link

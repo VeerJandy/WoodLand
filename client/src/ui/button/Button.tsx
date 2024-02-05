@@ -1,25 +1,17 @@
-import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
-import { memo, type MouseEvent, type ReactNode } from 'react'
+import { memo, type ReactNode } from 'react'
 
 import { variants } from '~/consts/Animate'
-import type { ClassName } from '~/models/GlobalModels'
 import Loading from '~/ui/loading/Loading'
 import Text from '~/ui/text/Text'
 
-import styles from './Button.module.scss'
+import type { UseButton } from './hooks/useButton'
+import useButton from './hooks/useButton'
 
-export interface ButtonProps {
+export interface ButtonProps extends UseButton {
   type?: 'button' | 'submit' | 'reset'
-  className?: ClassName
-  background?: 'white' | 'blur' | 'transparent'
-  size?: 'big' | 'small' | 'circle' | 'empty'
-  rounded?: boolean
-  loading?: boolean
-  disabled?: boolean
   label?: string
   icon?: ReactNode
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => unknown
 }
 
 const Button = ({
@@ -34,23 +26,16 @@ const Button = ({
   icon,
   onClick
 }: ButtonProps) => {
-  const buttonClassName = classNames(
-    styles.button,
-    background && styles[`button__${background}`],
-    size && styles[`button__${size}`],
-    rounded && styles.button__rounded,
-    (loading || disabled) && styles.button__disabled,
-    className
-  )
-
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    if (disabled || loading) {
-      event.preventDefault()
-      return
-    }
-
-    if (onClick) onClick(event)
-  }
+  const {
+    state: { buttonClassName },
+    functions: { handleClick }
+  } = useButton({
+    className,
+    background,
+    size,
+    rounded,
+    onClick
+  })
 
   return (
     <button

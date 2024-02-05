@@ -7,10 +7,10 @@ import { variants } from '~/consts/Animate'
 import Portal from '~/ui/portal/Portal'
 
 import styles from './Dropdown.module.scss'
-import type { UseDropdownProps } from './hooks/useDropdown'
+import type { UseDropdown } from './hooks/useDropdown'
 import useDropdown from './hooks/useDropdown'
 
-interface DropdownProps extends UseDropdownProps {}
+interface DropdownProps extends UseDropdown {}
 
 const Dropdown = ({ children, hover }: DropdownProps) => {
   const {

@@ -1,13 +1,8 @@
 'use client'
 
 import classNames from 'classnames'
-import {
-  type ComponentProps,
-  ForwardedRef,
-  forwardRef,
-  Fragment,
-  memo
-} from 'react'
+import type { ComponentProps, ForwardedRef } from 'react'
+import { forwardRef, memo } from 'react'
 
 import { useTranslation } from '~/i18n/i18n'
 import type { ClassName } from '~/models/GlobalModels'
@@ -42,7 +37,7 @@ const Text = forwardRef(
     ref: ForwardedRef<any>
   ) => {
     const t = useTranslation()
-    const TagName = as || Fragment
+    const TagName = as || defaultElement
 
     return as ? (
       <TagName ref={ref} className={classNames(className)} onClick={onClick}>

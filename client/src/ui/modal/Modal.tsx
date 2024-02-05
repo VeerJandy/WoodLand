@@ -23,7 +23,10 @@ interface ModalProps {
 
 const Modal = ({ title, isOpen, onClose, children, onSave }: ModalProps) => {
   useEffect(() => {
-    setBodyLock(isOpen)
+    setBodyLock({
+      isLockBody: isOpen,
+      isLockHeader: isOpen
+    })
   }, [isOpen])
 
   useKeyDown(isOpen, onClose)

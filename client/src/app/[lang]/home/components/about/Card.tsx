@@ -11,7 +11,7 @@ interface CardProps extends CardContent {}
 const Card = ({ image, subtitle, title, href }: CardProps) => (
   <div className="relative mt-4 h-[30vh] overflow-hidden rounded-big p-4 md:mt-0 md:h-full">
     <div className="relative z-one flex h-full flex-col justify-end text-white">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col justify-between md:flex-row md:items-center">
         <div>
           <Text as="h3" className="h3 font-bold" label={title} />
           <Text as="p" className="text-gray-1" label={subtitle} />
@@ -19,6 +19,7 @@ const Card = ({ image, subtitle, title, href }: CardProps) => (
         <AppLink
           href={href}
           button
+          className="mt-3 md:mt-0"
           buttonProps={{
             label: 'common.read_more',
             background: 'blur',

@@ -4,12 +4,12 @@ import { Children, useEffect, useRef, useState } from 'react'
 import useClickOutside from '~/hooks/useClickOutside'
 import useToggle from '~/hooks/useToggle'
 
-export interface UseDropdownProps {
+export interface UseDropdown {
   children: ReactNode
   hover?: boolean
 }
 
-const useDropdown = ({ children, hover }: UseDropdownProps) => {
+const useDropdown = ({ children, hover }: UseDropdown) => {
   const ref = useRef<HTMLDivElement>(null)
   const [triggerProps, setTriggerProps] = useState({})
   const [menuTrigger, ...menu] = Children.toArray(children)
