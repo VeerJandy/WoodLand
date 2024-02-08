@@ -20,7 +20,7 @@ const ProfileHead = () => {
           className="size-32"
         />
         <div className="">
-          <h1 className="h1 font-bold">
+          <h1 className="h1 font-bold text-white">
             <Text label="common.hello" />, {user?.name.firstName}
           </h1>
           <p className="text-gray-1">{user?.email}</p>

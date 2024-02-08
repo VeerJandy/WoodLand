@@ -1,25 +1,3 @@
-@use "sass:math";
-
-@function adaptive-value($startSize, $minSize, $customWidthFrom: 1100, $customWidthTo: 320) {
-  $widthFrom: $customWidthFrom;
-  $widthTo: $customWidthTo;
-
-  // Формула плавуючого значення
-  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
-  $yIntersection: -$widthTo * $slope + $minSize;
-
-  // Отримання значення властивості
-  $flyValue: #{$yIntersection}" + " #{$slope * 100}vw;
-
-  $propertyValue: #{"clamp(" $minSize "," $flyValue "," $startSize ")"};
-  // Якщо значення мінусове
-  @if ($minSize > $startSize) {
-    $propertyValue: #{"clamp(" $startSize "," $flyValue "," $minSize ")"};
-  }
-
-  @return $propertyValue;
-}
-
 // ===================================================================
 @mixin isHover {
   @media (hover: hover) {

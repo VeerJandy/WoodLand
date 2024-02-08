@@ -7,6 +7,9 @@ enum RouterEnum {
   Profile = '/profile',
   ProfileSettings = '/profile/settings',
   Admin = '/admin',
+  AdminUsers = '/admin/users',
+  AdminProducts = '/admin/products',
+  AdminOrders = '/admin/orders',
   SuperAdmin = '/super-admin'
 }
 

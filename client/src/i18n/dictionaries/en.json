@@ -68,5 +68,13 @@
       "card_title_6": "Wooden World",
       "card_subtitle_6": "Wooden World"
     }
+  },
+  "admin": {
+    "tabs": {
+      "main": "Main",
+      "users": "Users",
+      "products": "Products",
+      "orders": "Orders"
+    }
   }
 }

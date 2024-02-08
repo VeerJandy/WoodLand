@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 
 import RouterEnum from '~/enums/RouterEnum'
-import { useUser } from '~/modules/user'
+import { isUserModerator, isUserSuperAdmin, useUser } from '~/modules/user'
 import AppLink from '~/ui/app-link/AppLink'
 import Divider from '~/ui/divider/Divider'
 import User from '~/ui/user/User'
@@ -17,6 +17,8 @@ const Menu = () => {
     functions: { setContent }
   } = useHeader()
   const { user, signOut } = useUser()
+  const isModerator = isUserModerator()
+  const isSuperAdmin = isUserSuperAdmin()
 
   const onSignOut = async () => {
     setContent(null)
@@ -36,6 +38,22 @@ const Menu = () => {
               onClick={() => setContent(null)}
             />
           ))}
+          {isModerator && (
+            <AppLink
+              href={RouterEnum.Admin}
+              label="Admin"
+              className="flex px-8 py-2"
+              onClick={() => setContent(null)}
+            />
+          )}
+          {isSuperAdmin && (
+            <AppLink
+              href={RouterEnum.SuperAdmin}
+              label="Super Admin"
+              className="flex px-8 py-2"
+              onClick={() => setContent(null)}
+            />
+          )}
           {user && (
             <>
               <Divider className="mx-8" />
