@@ -17,8 +17,6 @@ export class UserService {
     return {
       id: String(user._id),
       isActivated: user.isActivated,
-      isBanned: user.isBanned,
-      banReason: user.banReason,
       role: user.role,
       name: {
         firstName: user.name.firstName,

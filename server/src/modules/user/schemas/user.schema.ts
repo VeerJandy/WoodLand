@@ -8,10 +8,6 @@ export type UserDocument = HydratedDocument<User>
 export class User {
   @Prop({ default: false })
   isActivated: boolean
-  @Prop({ default: false })
-  isBanned: boolean
-  @Prop({ default: '' })
-  banReason: string
   @Prop()
   role: UserRoleEnum[]
   @Prop(

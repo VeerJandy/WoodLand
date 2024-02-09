@@ -3,8 +3,6 @@ import { UserRoleEnum } from '../enums'
 export class UserDto {
   id: string
   isActivated: boolean
-  isBanned: boolean
-  banReason: string
   role: UserRoleEnum[]
   name: {
     firstName: string
