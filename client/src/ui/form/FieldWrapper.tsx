@@ -8,6 +8,7 @@ import type { FieldError } from 'react-hook-form'
 
 import { variants } from '~/consts/Animate'
 import useToggle from '~/hooks/useToggle'
+import { ClassName } from '~/models/GlobalModels'
 import Text from '~/ui/text/Text'
 
 import styles from './Form.module.scss'
@@ -19,6 +20,7 @@ interface FieldWrapperProps {
   isValue?: boolean
   isTransparent?: boolean
   disabled?: boolean
+  className?: ClassName
 }
 
 const FieldWrapper = ({
@@ -27,7 +29,8 @@ const FieldWrapper = ({
   placeholder,
   isValue,
   isTransparent,
-  disabled
+  disabled,
+  className
 }: FieldWrapperProps) => {
   const [isFocus, toggle] = useToggle()
 
@@ -38,7 +41,8 @@ const FieldWrapper = ({
         styles.field,
         isTransparent && styles.field__transparent,
         error && !isTransparent && styles.field__error,
-        disabled && styles.field__disabled
+        disabled && styles.field__disabled,
+        className
       )}
       onFocus={toggle}
       onBlur={toggle}

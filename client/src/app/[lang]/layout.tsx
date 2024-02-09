@@ -21,8 +21,8 @@ const font = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'EverWood',
-  description: 'EverWood'
+  title: 'WoodLand',
+  description: 'WoodLand'
 }
 
 interface RootLayoutProps {

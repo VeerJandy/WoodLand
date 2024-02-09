@@ -20,7 +20,7 @@ const useAuth = (url: string, isShowConfetti: boolean = false) => {
   const { close } = useAuthModal()
   const { signIn } = useUser()
 
-  const onSubmit = async (
+  const submit = async (
     formState: SignUp | SignIn,
     { setError }: UseFormReturn
   ) => {
@@ -43,6 +43,7 @@ const useAuth = (url: string, isShowConfetti: boolean = false) => {
         close()
         isShowConfetti && runOnceConfetti()
       }
+      return data
     } catch (e) {
       addErrorToast({
         content: 'errors.something_went_wrong'
@@ -53,7 +54,10 @@ const useAuth = (url: string, isShowConfetti: boolean = false) => {
     }
   }
 
-  return { functions: { close, onSubmit }, state: { isLoading } }
+  return {
+    functions: { close, submit },
+    state: { isLoading }
+  }
 }
 
 export default useAuth

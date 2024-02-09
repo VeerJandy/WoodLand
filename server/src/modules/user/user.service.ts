@@ -57,6 +57,10 @@ export class UserService {
     return this.getUserForClient(user)
   }
 
+  public async activateUser(email: string) {
+    await this.userRepository.findOneAndUpdate({ email }, { isActivated: true })
+  }
+
   public async findByEmailOrId(emailOrId: string) {
     const isId = mongoose.Types.ObjectId.isValid(emailOrId)
     const user: UserDocument = isId

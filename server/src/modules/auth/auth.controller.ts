@@ -7,23 +7,28 @@ import {
   HttpStatus,
   ValidationPipe,
   Get,
-  UnauthorizedException
+  UnauthorizedException,
+  Query
 } from '@nestjs/common'
 import type { Response } from 'express'
 import { Public, UserAgent, Cookie } from '~/common/decorators'
 import type { BackResponse } from '~/models/BackResponseModel'
 import type { UserDto } from '~/modules/user/dto'
 import { TokenService } from '~/modules/token/token.service'
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '~/modules/token/config'
+import { MailService } from '~/modules/mail/mail.service'
+import { UserService } from '~/modules/user/user.service'
 import getErrorFromString from '~/helpers/getErrorFromString'
 import { AuthService } from './auth.service'
 import type { SignupDto, SigninDto } from './dto'
-import { ACCESS_TOKEN, REFRESH_TOKEN } from '~/modules/token/config'
 
 @Controller('auth')
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
-    private readonly tokenService: TokenService
+    private readonly tokenService: TokenService,
+    private readonly userService: UserService,
+    private readonly mailService: MailService
   ) {}
 
   @Public()
@@ -128,6 +133,59 @@ export class AuthController {
 
       this.tokenService.setTokenToCookie(token, res)
 
+      return {
+        result: true,
+        statusCode: HttpStatus.OK,
+        message: [],
+        data: null
+      }
+    } catch (e) {
+      return {
+        result: false,
+        statusCode: e.status,
+        message: getErrorFromString(e.message),
+        data: null
+      }
+    }
+  }
+
+  @Get('/send-confirm-email')
+  async sendConfirmEmail(
+    @Query('email') email: string,
+    @Query('name') name: string
+  ): Promise<BackResponse> {
+    try {
+      await this.mailService.sendMail({
+        to: email,
+        subject: 'Welcome to WoodLand. Confirm email',
+        template: './confirmation',
+        context: {
+          name,
+          href: `${process.env.FRONTEND_HOST}/confirm-email?email=${email}`
+        }
+      })
+
+      return {
+        result: true,
+        statusCode: HttpStatus.OK,
+        message: [],
+        data: null
+      }
+    } catch (e) {
+      return {
+        result: false,
+        statusCode: e.status,
+        message: getErrorFromString(e.message),
+        data: null
+      }
+    }
+  }
+
+  @Public()
+  @Get('/confirm-email')
+  async confirmEmail(@Query('email') email: string): Promise<BackResponse> {
+    await this.userService.activateUser(email)
+    try {
       return {
         result: true,
         statusCode: HttpStatus.OK,

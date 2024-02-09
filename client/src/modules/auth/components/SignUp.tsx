@@ -1,9 +1,12 @@
 'use client'
 
 import { forwardRef } from 'react'
+import type { UseFormReturn } from 'react-hook-form'
 
 import { variants } from '~/consts/Animate'
 import RouterEnum from '~/enums/RouterEnum'
+import { request } from '~/helpers/request'
+import { useToast } from '~/modules/toast'
 import AppLink from '~/ui/app-link/AppLink'
 import Button from '~/ui/button/Button'
 import Checkbox from '~/ui/form/Checkbox'
@@ -15,12 +18,32 @@ import Text from '~/ui/text/Text'
 import { signUpDefaultValues } from '../config/defaultValues'
 import { signUpSchema } from '../config/rules'
 import useAuth from '../hooks/useAuth'
+import type { SignUp } from '../models/AuthModel'
 
 const SignUp = forwardRef(() => {
+  const { addSuccessToast } = useToast()
+
   const {
-    functions: { close, onSubmit },
+    functions: { close, submit },
     state: { isLoading }
   } = useAuth('/auth/sign-up', true)
+
+  const onSubmit = async (formState: SignUp, formFunctions: UseFormReturn) => {
+    const user = await submit(formState, formFunctions)
+    if (user) {
+      const { result } = await request('/auth/send-confirm-email', {
+        data: {
+          email: user.email,
+          name: user.name.firstName
+        }
+      })
+      if (result) {
+        addSuccessToast({
+          content: 'auth.confirm_email_sent'
+        })
+      }
+    }
+  }
 
   return (
     <MotionForm

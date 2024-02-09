@@ -6,6 +6,7 @@ import { TokenModule } from '~/modules/token/token.module'
 import { UserModule } from '~/modules/user/user.module'
 import { AuthModule } from '~/modules/auth/auth.module'
 import { JwtAuthGuard } from '~/modules/auth/guards'
+import { MailModule } from '~/modules/mail/mail.module'
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { JwtAuthGuard } from '~/modules/auth/guards'
     MongooseModule.forRoot(process.env.MONGO_CONNECT_URL),
     AuthModule,
     UserModule,
-    TokenModule
+    TokenModule,
+    MailModule
   ],
   providers: [
     {

@@ -45,7 +45,11 @@
     "already_have_account": "Already have an account?",
     "don't_have_account": "Don't have an account?",
     "is_agree_text": "Agree with",
-    "is_agree_link": "terms and conditions"
+    "is_agree_link": "terms and conditions",
+    "forgot_password": "Forgot password?",
+    "confirm_email_sent": "Confirmation sent on your email",
+    "email_confirmed_success": "Your email has been confirmed",
+    "email_confirmed_error": "Your email has not been confirmed"
   },
   "home": {
     "about": {

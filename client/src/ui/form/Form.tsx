@@ -12,8 +12,9 @@ import type { ZodType } from 'zod'
 import type { ClassName } from '~/models/GlobalModels'
 
 interface FormProps<T extends FieldValues> {
-  children: ReactNode
-  onSubmit: (form: T, formContext: UseFormReturn<T>) => unknown
+  children?: ReactNode
+  render?: (form: UseFormReturn<T>) => ReactNode
+  onSubmit: (form: any, formContext: UseFormReturn<T>) => unknown
   defaultValues: Required<DefaultValues<T>>
   rules: ZodType<T>
   loading?: boolean
@@ -33,7 +34,8 @@ const Form = forwardRef(function <T extends FieldValues>(
     loading,
     rules,
     children,
-    className
+    className,
+    render
   }: FormProps<T>,
   ref: ForwardedRef<HTMLFormElement>
 ) {
@@ -51,6 +53,7 @@ const Form = forwardRef(function <T extends FieldValues>(
         onSubmit={form.handleSubmit(data => onSubmit(data, form))}
       >
         {children}
+        {render && render(form)}
       </form>
     </FormContext.Provider>
   )

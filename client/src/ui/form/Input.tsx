@@ -5,6 +5,7 @@ import { memo, useContext } from 'react'
 import { useController } from 'react-hook-form'
 
 import type { AutoCompleteModel } from '~/models/AutoCompleteModel'
+import { ClassName } from '~/models/GlobalModels'
 import { FormContext } from '~/ui/form/Form'
 import IconArrowInCircle from '~/ui/icons/IconArrowInCircle'
 import IconCheck from '~/ui/icons/IconCheck'
@@ -22,6 +23,7 @@ interface InputProps {
   placeholder?: string
   autoComplete?: AutoCompleteModel
   disabled?: boolean
+  className?: ClassName
 }
 
 const Input = ({
@@ -32,7 +34,8 @@ const Input = ({
   iconDependOnValue,
   placeholder,
   autoComplete,
-  disabled
+  disabled,
+  className
 }: InputProps) => {
   const form = useContext(FormContext)!
   const { field, fieldState } = useController({ name, control: form.control })
@@ -43,6 +46,7 @@ const Input = ({
       isValue={Boolean(field.value)}
       placeholder={placeholder}
       disabled={disabled}
+      className={className}
     >
       {startContent}
       <input

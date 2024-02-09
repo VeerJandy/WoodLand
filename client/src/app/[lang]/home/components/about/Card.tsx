@@ -34,7 +34,7 @@ const Card = ({ image, subtitle, title, href }: CardProps) => (
         />
       </div>
     </div>
-    <Image src={image} alt="" fill quality={100} />
+    <Image src={image} alt="" fill quality={100} sizes="50vw" />
   </div>
 )
 

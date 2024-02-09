@@ -20,7 +20,7 @@ const Logo = () => {
       )}
     >
       <IconLogo size="20" />
-      <span>EverWood</span>
+      <span>WoodLand</span>
     </MotionAppLink>
   )
 }
