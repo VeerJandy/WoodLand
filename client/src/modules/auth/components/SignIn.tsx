@@ -10,7 +10,7 @@ import { MotionForm } from '~/ui/form/Form'
 import Input from '~/ui/form/Input'
 import Text from '~/ui/text/Text'
 
-import { signInDefaultValues } from '../config/defaultValues'
+import { SignInDefaultValues } from '../config/defaultValues'
 import { signInSchema } from '../config/rules'
 import useAuth from '../hooks/useAuth'
 
@@ -27,7 +27,7 @@ const SignIn = forwardRef(() => {
 
   return (
     <MotionForm
-      defaultValues={signInDefaultValues}
+      defaultValues={SignInDefaultValues}
       rules={signInSchema}
       onSubmit={submit}
       className="flex flex-col"

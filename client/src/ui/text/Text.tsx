@@ -21,6 +21,7 @@ type Element =
 
 interface TextOwnProps<E extends Element = Element> {
   label: string
+  values?: Record<string, string>
   as?: E
   className?: ClassName
   onClick?: () => unknown
@@ -33,7 +34,7 @@ const defaultElement = 'p'
 
 const Text = forwardRef(
   <E extends Element = typeof defaultElement>(
-    { label, as, className, onClick }: TextProps<E>,
+    { label, values, as, className, onClick }: TextProps<E>,
     ref: ForwardedRef<any>
   ) => {
     const t = useTranslation()
@@ -41,10 +42,10 @@ const Text = forwardRef(
 
     return as ? (
       <TagName ref={ref} className={classNames(className)} onClick={onClick}>
-        {t(label)}
+        {t(label, values)}
       </TagName>
     ) : (
-      <>{t(label)}</>
+      <>{t(label, values)}</>
     )
   }
 )

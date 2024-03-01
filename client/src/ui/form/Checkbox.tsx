@@ -24,9 +24,9 @@ const Checkbox = ({ name, label, children }: CheckboxProps) => {
     <FieldWrapper
       error={fieldState.error}
       isValue={Boolean(field.value)}
-      isTransparent
+      transparent
     >
-      <label className="relative flex cursor-pointer items-center gap-2">
+      <label className="relative flex w-full cursor-pointer items-center gap-2">
         <input type="checkbox" className="absolute hidden" {...field} />
 
         <span

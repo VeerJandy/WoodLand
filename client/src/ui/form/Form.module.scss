@@ -13,7 +13,7 @@
   padding: 0 0.5rem;
   border-radius: var(--border-radius);
   color: var(--material-primary-dark);
-  transition: border var(--transition);
+  transition: border var(--transition), background var(--transition);
 
   &__placeholder {
     pointer-events: none;
@@ -61,6 +61,23 @@
   &[type=number] {
     -moz-appearance: textfield;
   }
+
+  &::-webkit-datetime-edit {
+    color: transparent;
+  }
+
+  &:not([value=""])::-webkit-datetime-edit {
+    color: white;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    background: transparent;
+    cursor: pointer;
+    height: auto;
+    position: absolute;
+    inset: 0;
+    width: auto;
+  }
 }
 
 .checkbox {
@@ -92,6 +109,44 @@
     justify-content: flex-end;
     background: var(--green-4);
   }
+}
+
+.select {
+  position: absolute;
+  top: calc(var(--field-height) + 0.25rem);
+  left: 0;
+  width: 100%;
+  background: var(--material-primary);
+  border-radius: var(--border-radius);
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 12rem;
+  z-index: var(--z-index-low);
+
+  &__item {
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+    border-radius: var(--border-radius-low);
+    display: flex;
+    align-items: center;
+
+    @include isHover {
+      background: var(--material-primary-hover);
+    }
+  }
+}
+
+.date {
+  position: absolute;
+  top: calc(var(--field-height) + 0.25rem);
+  left: 0;
+  width: 100%;
+  background: var(--material-primary);
+  border-radius: var(--border-radius);
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: var(--z-index-low);
+  @include flex-center;
 }
 
 @include darkTheme {

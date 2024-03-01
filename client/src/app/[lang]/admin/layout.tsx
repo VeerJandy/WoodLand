@@ -11,7 +11,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => (
   <>
-    <ProfileHead />
+    <ProfileHead bgImage="https://images.pexels.com/photos/17411096/pexels-photo-17411096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
     <section className="container my-4">
       <Tabs initialTabByHref>
         <Tab title="admin.tabs.main" href={RouterEnum.Admin} />

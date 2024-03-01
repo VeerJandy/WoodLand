@@ -12,7 +12,14 @@
     "warning": "Попередження",
     "settings": "Налаштування",
     "hello": "Привіт",
-    "read_more": "Читати далі"
+    "read_more": "Читати далі",
+    "back": "Назад",
+    "save": "Зберегти"
+  },
+  "currency": {
+    "uah": "Гривня",
+    "usd": "Долар",
+    "eur": "Євро"
   },
   "errors": {
     "something_went_wrong": "Щось пішло не так",
@@ -27,7 +34,15 @@
     "last_name_is_required": "Прізвище обов'язкове",
     "is_agree_is_required": "Ви повинні погодитися з умовами використання",
     "exists_email": "Email вже існує",
-    "wrong_email_or_password": "Невірний email або пароль"
+    "wrong_email_or_password": "Невірний email або пароль",
+    "field_required": "Поле обовʼязкове",
+    "field_max_length": "Максимум {number} символів",
+    "field_max_length_20": "Максимум 20 символів",
+    "field_max_length_200": "Максимум 200 символів",
+    "min_value_0": "Мінімальне значення 0",
+    "min_value_1": "Мінімальне значення 1",
+    "max_value_100": "Максимальне значення 100",
+    "field_must_be_a_number": "Поле має бути числом"
   },
   "header": {
     "home": "Головна",
@@ -78,6 +93,10 @@
       "users": "Користувачі",
       "products": "Продукти",
       "orders": "Замовлення"
+    },
+    "products": {
+      "create": "Створити продукт",
+      "edit": "Редагувати продукт"
     }
   }
 }

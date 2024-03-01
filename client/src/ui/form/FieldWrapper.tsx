@@ -2,8 +2,8 @@
 
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
-import type { ReactNode } from 'react'
-import { memo } from 'react'
+import type { ForwardedRef, ReactNode } from 'react'
+import { forwardRef, memo } from 'react'
 import type { FieldError } from 'react-hook-form'
 
 import { variants } from '~/consts/Animate'
@@ -18,58 +18,67 @@ interface FieldWrapperProps {
   error?: FieldError
   placeholder?: string
   isValue?: boolean
-  isTransparent?: boolean
+  transparent?: boolean
   disabled?: boolean
   className?: ClassName
+  onClick?: () => void
 }
 
-const FieldWrapper = ({
-  children,
-  error,
-  placeholder,
-  isValue,
-  isTransparent,
-  disabled,
-  className
-}: FieldWrapperProps) => {
-  const [isFocus, toggle] = useToggle()
+const FieldWrapper = forwardRef(
+  (
+    {
+      children,
+      error,
+      placeholder,
+      isValue,
+      transparent,
+      disabled,
+      className,
+      onClick
+    }: FieldWrapperProps,
+    ref: ForwardedRef<HTMLDivElement>
+  ) => {
+    const [isFocus, toggle] = useToggle()
 
-  return (
-    <div
-      className={classNames(
-        'relative',
-        styles.field,
-        isTransparent && styles.field__transparent,
-        error && !isTransparent && styles.field__error,
-        disabled && styles.field__disabled,
-        className
-      )}
-      onFocus={toggle}
-      onBlur={toggle}
-    >
-      <label
+    return (
+      <div
+        ref={ref}
         className={classNames(
-          styles.field__placeholder,
-          (isFocus || isValue) && styles.field__placeholder_active
+          'relative',
+          styles.field,
+          transparent && styles.field__transparent,
+          error && !transparent && styles.field__error,
+          disabled && styles.field__disabled,
+          className
         )}
+        onFocus={toggle}
+        onBlur={toggle}
+        onClick={onClick}
       >
-        <Text label={placeholder ?? ''} />
-      </label>
+        <label
+          className={classNames(
+            styles.field__placeholder,
+            (isFocus || isValue) && styles.field__placeholder_active
+          )}
+        >
+          <Text label={placeholder ?? ''} />
+        </label>
 
-      {children}
+        {children}
 
-      <AnimatePresence mode="wait">
-        {error && (
-          <motion.span
-            className="small absolute -bottom-5 left-2 line-clamp-1 text-red-4"
-            {...variants.opacity}
-          >
-            <Text label={`errors.${error.message}`} />
-          </motion.span>
-        )}
-      </AnimatePresence>
-    </div>
-  )
-}
+        <AnimatePresence mode="wait">
+          {error && (
+            <motion.span
+              className="small absolute -bottom-5 left-2 line-clamp-1 text-red-4"
+              {...variants.opacity}
+            >
+              <Text label={`errors.${error.message}`} />
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </div>
+    )
+  }
+)
 
 export default memo(FieldWrapper)

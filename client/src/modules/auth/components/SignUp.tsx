@@ -15,7 +15,7 @@ import Input from '~/ui/form/Input'
 import IconArrowLink from '~/ui/icons/IconArrowLink'
 import Text from '~/ui/text/Text'
 
-import { signUpDefaultValues } from '../config/defaultValues'
+import { SignUpDefaultValues } from '../config/defaultValues'
 import { signUpSchema } from '../config/rules'
 import useAuth from '../hooks/useAuth'
 import type { SignUp } from '../models/AuthModel'
@@ -47,7 +47,7 @@ const SignUp = forwardRef(() => {
 
   return (
     <MotionForm
-      defaultValues={signUpDefaultValues}
+      defaultValues={SignUpDefaultValues}
       rules={signUpSchema}
       onSubmit={onSubmit}
       className="flex flex-col gap-8"

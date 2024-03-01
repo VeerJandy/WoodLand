@@ -14,11 +14,11 @@ export const checkIsPathnameHasLocale = (pathname: string) =>
 
 type Dictionary = string | { [key: string]: Dictionary }
 
-export const useTranslation = (): ((key: string) => string) => {
+export const useTranslation = () => {
   const dictionaryString = useContext(LangContext)
   const dictionary: Dictionary = JSON.parse(dictionaryString)
 
-  return key => {
+  return (key: string, values?: Record<string, string>) => {
     try {
       const keys: string[] = key.split('.')
       let words: string | Dictionary = dictionary
@@ -32,6 +32,11 @@ export const useTranslation = (): ((key: string) => string) => {
       })
 
       if (typeof result === 'string') {
+        if (!values) return result
+
+        Object.entries(values).map(([key, value]) => {
+          result = (result as string).replace(`{${key}}`, value)
+        })
         return result
       }
 

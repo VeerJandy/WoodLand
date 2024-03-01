@@ -28,6 +28,8 @@ const nextConfig = {
     remotePatterns: [
       { hostname: 'images.pexels.com' },
       { hostname: 'pbs.twimg.com' },
+      { hostname: 'external-preview.redd.it' },
+      { hostname: 'img10.joyreactor.cc' },
       { hostname: 'localhost' }
     ]
   },

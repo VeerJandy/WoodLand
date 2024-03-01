@@ -7,7 +7,11 @@ import { useUser } from '~/modules/user'
 import Avatar from '~/ui/avatar/Avatar'
 import Text from '~/ui/text/Text'
 
-const ProfileHead = () => {
+interface ProfileHeadProps {
+  bgImage: string
+}
+
+const ProfileHead = ({ bgImage }: ProfileHeadProps) => {
   const { user } = useUser()
 
   return (
@@ -27,7 +31,7 @@ const ProfileHead = () => {
         </div>
       </div>
       <Image
-        src="https://images.pexels.com/photos/1583119/pexels-photo-1583119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        src={bgImage}
         alt="profile background"
         fill
         priority

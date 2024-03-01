@@ -65,3 +65,14 @@ img, video {
 }
 
 // ===================================================================
+.rdp-weeknumber, .rdp-day {
+  transition: var(--transition)
+}
+
+.rdp-day_selected, .rdp-day_selected:focus-visible, .rdp-day_selected:hover {
+  --rdp-accent-color: var(--green-4);
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  color: var(--black);
+}

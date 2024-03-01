@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => (
   <>
-    <ProfileHead />
+    <ProfileHead bgImage="https://images.pexels.com/photos/20153222/pexels-photo-20153222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
     {children}
   </>
 )

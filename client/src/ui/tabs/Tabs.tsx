@@ -19,7 +19,7 @@ const Tabs = (props: TabsProps) => {
 
   return (
     <div>
-      <div className="no-scroll-bar flex overflow-y-hidden overflow-x-scroll rounded-full bg-white shadow-2xl dark:bg-gray-7">
+      <nav className="no-scroll-bar flex overflow-y-hidden overflow-x-scroll rounded-full bg-white shadow-2xl dark:bg-gray-7">
         {head.map(tab => (
           <div
             role="button"
@@ -45,7 +45,7 @@ const Tabs = (props: TabsProps) => {
             )}
           </div>
         ))}
-      </div>
+      </nav>
 
       <div className="my-2">
         <AnimatePresence mode="popLayout">{content}</AnimatePresence>

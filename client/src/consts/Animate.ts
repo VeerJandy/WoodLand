@@ -5,7 +5,11 @@ interface AnimateVariant {
   exit: string
 }
 
-export type AnimateVariantKeys = 'opacity' | 'xAndOpacity' | 'yAndOpacity'
+export type AnimateVariantKeys =
+  | 'opacity'
+  | 'xAndOpacity'
+  | 'yAndOpacity'
+  | 'height'
 
 type Variants = Record<AnimateVariantKeys, AnimateVariant>
 
@@ -32,6 +36,15 @@ export const variants: Variants = {
     variants: {
       hidden: { opacity: 0, y: 25 },
       visible: { opacity: 1, y: 0 }
+    },
+    initial: 'hidden',
+    animate: 'visible',
+    exit: 'hidden'
+  },
+  height: {
+    variants: {
+      hidden: { height: 0 },
+      visible: { height: 'auto' }
     },
     initial: 'hidden',
     animate: 'visible',

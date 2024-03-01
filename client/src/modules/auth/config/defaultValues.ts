@@ -1,6 +1,6 @@
 import { SignUp } from '../models/AuthModel'
 
-export const signUpDefaultValues: SignUp = {
+export const SignUpDefaultValues: SignUp = {
   email: '',
   password: '',
   repeatPassword: '',
@@ -9,7 +9,7 @@ export const signUpDefaultValues: SignUp = {
   isAgree: false
 }
 
-export const signInDefaultValues = {
+export const SignInDefaultValues = {
   email: '',
   password: ''
 }

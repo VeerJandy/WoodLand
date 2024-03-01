@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getStorageItem } from '~/helpers/storage'
+import { getStorageItem, setStorageItem } from '~/helpers/storage'
 
 type UseLocalStorage<T> = [T, (value: T) => void]
 
@@ -12,7 +12,7 @@ const useLocalStorage = <T = unknown>(
     getStorageItem(key, initialValue ?? null)
   )
 
-  useEffect(() => localStorage.setItem(key, JSON.stringify(value)), [value])
+  useEffect(() => setStorageItem(key, value), [value])
 
   return [value, setValue]
 }

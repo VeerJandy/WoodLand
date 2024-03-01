@@ -1,6 +1,6 @@
 'use client'
 
-import type { HTMLInputTypeAttribute, ReactNode } from 'react'
+import type { ChangeEvent, HTMLInputTypeAttribute, ReactNode } from 'react'
 import { memo, useContext } from 'react'
 import { useController } from 'react-hook-form'
 
@@ -40,6 +40,33 @@ const Input = ({
   const form = useContext(FormContext)!
   const { field, fieldState } = useController({ name, control: form.control })
 
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (disabled) {
+      event.preventDefault()
+      return
+    }
+    const value = event.target.value
+
+    if (type === 'number') {
+      if (value === undefined || value === null || value === '') {
+        field.onChange('')
+        return
+      }
+
+      // TODO cant write "0" now
+      const re = /^-?([1-9]\d*([.,])\d{0,2}|0?([.,])\d*[1-9]\d*|[1-9]\d*)$/
+      if (!re.test(value)) {
+        event.preventDefault()
+        return
+      }
+
+      field.onChange(Number(value))
+      return
+    }
+
+    field.onChange(value)
+  }
+
   return (
     <FieldWrapper
       error={fieldState.error}
@@ -54,6 +81,7 @@ const Input = ({
         className={styles.input}
         autoComplete={autoComplete}
         {...field}
+        onChange={onChange}
       />
       {endContent}
 

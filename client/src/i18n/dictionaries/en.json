@@ -12,7 +12,14 @@
     "warning": "Warning",
     "settings": "Settings",
     "hello": "Hello",
-    "read_more": "Read more"
+    "read_more": "Read more",
+    "back": "Back",
+    "save": "Save"
+  },
+  "currency": {
+    "uah": "UAH",
+    "usd": "USD",
+    "eur": "Euro"
   },
   "errors": {
     "something_went_wrong": "Something went wrong",
@@ -28,7 +35,15 @@
     "last_name_is_required": "Last name is required",
     "is_agree_is_required": "You need to accept our terms and conditions",
     "exists_email": "Email already exists",
-    "wrong_email_or_password": "Wrong email or password"
+    "wrong_email_or_password": "Wrong email or password",
+    "field_required": "Field is required",
+    "field_max_length": "Maximum {number} characters",
+    "field_max_length_20": "Maximum 20 characters",
+    "field_max_length_200": "Maximum 200 characters",
+    "min_value_0": "Min value is 0",
+    "min_value_1": "Min value is 1",
+    "max_value_100": "Max value is 100",
+    "field_must_be_a_number": "Field must be a number"
   },
   "header": {
     "home": "Home",
@@ -79,6 +94,10 @@
       "users": "Users",
       "products": "Products",
       "orders": "Orders"
+    },
+    "products": {
+      "create": "Create product",
+      "edit": "Edit product"
     }
   }
 }
