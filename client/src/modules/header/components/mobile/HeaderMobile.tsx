@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 
 import { durationMedium, easeMedium } from '~/consts/Animate'
 import IconLanguage from '~/ui/icons/IconLanguage'
-import IconTheme from '~/ui/icons/IconTheme'
 
 import ContentEnum from '../../enums/ContentEnum'
 import useHeader from '../../hooks/useHeader'
@@ -12,7 +11,6 @@ import Burger from './Burger'
 import Language from './Language'
 import Logo from './Logo'
 import Menu from './Menu'
-import Theme from './Theme'
 
 const HeaderMobile = () => {
   const {
@@ -35,10 +33,6 @@ const HeaderMobile = () => {
 
         <nav className="flex">
           <HeaderButton
-            icon={<IconTheme />}
-            onClick={() => setContent(ContentEnum.Theme)}
-          />
-          <HeaderButton
             icon={<IconLanguage />}
             onClick={() => setContent(ContentEnum.Language)}
           />
@@ -46,7 +40,6 @@ const HeaderMobile = () => {
         </nav>
       </div>
 
-      <Theme />
       <Language />
       <Menu />
     </motion.header>

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  darkMode: ['class', '[data-theme="dark"]'],
+  // darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     container: {
       center: true,
@@ -39,7 +39,6 @@ module.exports = {
       black: 'var(--black)',
       'black-opacity': 'var(--black-opacity)',
       'material-primary': 'var(--material-primary)',
-      'material-primary-dark': 'var(--material-primary-dark)',
       gray: {
         0: 'var(--gray-0)',
         1: 'var(--gray-1)',

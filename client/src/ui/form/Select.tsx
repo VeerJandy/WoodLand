@@ -41,8 +41,8 @@ const Select = (props: SelectProps) => {
       <IconArrowDown
         size="14"
         className={classNames(
-          'transition-transform',
-          isOpen ? 'rotate-180' : ''
+          'transition-transform text-white',
+          isOpen && 'rotate-180'
         )}
       />
 

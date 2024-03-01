@@ -18,7 +18,7 @@ const AboutMobile = () => (
         <Text
           as="h3"
           label={title}
-          className="h3 text-center font-bold text-gray-6 dark:text-gray-2"
+          className="h3 text-center font-bold text-gray-2"
         />
         <Card {...card} />
       </AnimateWrapper>

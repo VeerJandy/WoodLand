@@ -9,16 +9,16 @@
   gap: 0.25rem;
 
   background: var(--material-primary);
-  border: 1px solid var(--gray-1);
+  border: 1px solid var(--gray-5);
   padding: 0 0.5rem;
   border-radius: var(--border-radius);
-  color: var(--material-primary-dark);
+  color: var(--white);
   transition: border var(--transition), background var(--transition);
 
   &__placeholder {
     pointer-events: none;
     position: absolute;
-    color: var(--gray-4);
+    color: var(--gray-1);
     font-size: var(--p);
     transition: var(--transition);
     top: 0.25rem;
@@ -30,7 +30,7 @@
   }
 
   &__error {
-    border: 1px solid var(--red-2);
+    border: 1px solid var(--red-4);
   }
 
   &__transparent {
@@ -147,23 +147,4 @@
   overflow-y: auto;
   z-index: var(--z-index-low);
   @include flex-center;
-}
-
-@include darkTheme {
-  .field {
-    border: 1px solid var(--gray-5);
-
-    &__placeholder {
-      color: var(--gray-1);
-    }
-
-    &__error {
-      border: 1px solid var(--red-4);
-    }
-
-    &__transparent {
-      background: transparent;
-      border: none;
-    }
-  }
 }

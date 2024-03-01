@@ -6,13 +6,8 @@
   z-index: var(--z-index-header);
   overflow: hidden;
 
-  background: var(--white-opacity);
+  background: var(--black-opacity);
   @include blur;
   transition: background var(--transition), color var(--transition);
-}
-
-@include darkTheme {
-  .header {
-    background: var(--black-opacity);
-  }
+  border-bottom: 1px solid var(--white-opacity-6);
 }

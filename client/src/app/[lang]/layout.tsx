@@ -38,8 +38,8 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
   const user = await getUser()
 
   return (
-    <html lang={params.lang} className={font.className} data-theme="dark">
-      <body className="scroll-bar bg-gray-0 text-black transition-colors dark:bg-black dark:text-white">
+    <html lang={params.lang} className={font.className}>
+      <body className="scroll-bar bg-black text-white transition-colors">
         <Providers dictionary={dictionary} user={user}>
           <Header />
           <main>{children}</main>

@@ -19,7 +19,7 @@ const Tabs = (props: TabsProps) => {
 
   return (
     <div>
-      <nav className="no-scroll-bar flex overflow-y-hidden overflow-x-scroll rounded-full bg-white shadow-2xl dark:bg-gray-7">
+      <nav className="no-scroll-bar flex overflow-y-hidden overflow-x-scroll rounded-full bg-gray-7 shadow-2xl">
         {head.map(tab => (
           <div
             role="button"
@@ -39,7 +39,7 @@ const Tabs = (props: TabsProps) => {
             {activeTab === tab.key && (
               <motion.div
                 layoutId="active-bg"
-                className="absolute inset-1 rounded-full bg-gray-8 dark:bg-black"
+                className="absolute inset-1 rounded-full bg-black"
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               />
             )}

@@ -16,6 +16,4 @@ export const useAdaptive = () => {
   }, [setIsMobile])
 }
 
-export const useIsMobile = () => {
-  return useAdaptiveStore(state => state.isMobile)
-}
+export const useIsMobile = () => useAdaptiveStore(state => state.isMobile)

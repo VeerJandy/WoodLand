@@ -26,7 +26,7 @@
   font-size: var(--h1);
   line-height: var(--lh-h1);
   text-wrap: balance;
-  background: -webkit-linear-gradient(0deg, #be22ff 20%, #ff279c 50%, #ff981f 80%);
+  background: linear-gradient(to bottom right, var(--white), var(--gray-2));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

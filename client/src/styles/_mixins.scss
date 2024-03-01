@@ -38,17 +38,17 @@
 }
 
 // ===================================================================
-@mixin lightTheme {
-  [data-theme="light"] {
-    @content
-  }
-}
+//@mixin lightTheme {
+//  [data-theme="light"] {
+//    @content
+//  }
+//}
 
-@mixin darkTheme {
-  [data-theme="dark"] {
-    @content
-  }
-}
+//@mixin darkTheme {
+//  [data-theme="dark"] {
+//    @content
+//  }
+//}
 
 // ===================================================================
 @mixin mobile {

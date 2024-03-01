@@ -5,7 +5,6 @@ import { type ReactNode } from 'react'
 import { useAdaptive } from '~/hooks/useAdaptive'
 import { LangContext } from '~/i18n/i18n'
 import { ConfettiProvider } from '~/modules/confetti'
-import { ThemeProvider } from '~/modules/theme'
 import { UserModel, UserProvider } from '~/modules/user'
 
 interface ProvidersProps {
@@ -20,9 +19,7 @@ const Providers = ({ children, dictionary, user }: ProvidersProps) => {
   return (
     <LangContext.Provider value={dictionary}>
       <ConfettiProvider>
-        <UserProvider user={user}>
-          <ThemeProvider>{children}</ThemeProvider>
-        </UserProvider>
+        <UserProvider user={user}>{children}</UserProvider>
       </ConfettiProvider>
     </LangContext.Provider>
   )

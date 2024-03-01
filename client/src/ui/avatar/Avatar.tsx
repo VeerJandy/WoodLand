@@ -29,8 +29,7 @@ const Avatar = ({
       'relative flex items-center justify-center rounded-full bg-white dark:bg-gray-8',
       size === 'sm' && 'size-8',
       !size && 'size-10',
-      bordered &&
-        'ring-2 ring-offset-2 ring-offset-white dark:ring-offset-black',
+      bordered && 'ring-2 ring-offset-2 ring-offset-black',
       bordered && (!color || color === 'default') && 'ring-gray-4',
       bordered && color === 'primary' && 'ring-blue-4',
       bordered && color === 'secondary' && 'ring-purple-4',
