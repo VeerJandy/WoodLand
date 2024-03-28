@@ -7,6 +7,7 @@ import { UserModule } from '~/modules/user/user.module'
 import { AuthModule } from '~/modules/auth/auth.module'
 import { JwtAuthGuard } from '~/modules/auth/guards'
 import { MailModule } from '~/modules/mail/mail.module'
+import { ProductsModule } from '~/modules/products/products.module'
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { MailModule } from '~/modules/mail/mail.module'
     AuthModule,
     UserModule,
     TokenModule,
-    MailModule
+    MailModule,
+    ProductsModule
   ],
   providers: [
     {

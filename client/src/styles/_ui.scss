@@ -65,6 +65,28 @@ img, video {
 }
 
 // ===================================================================
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  background: var(--gray-6);
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    animation: shimmer 2s infinite;
+    background: linear-gradient(to right, var(--gray-6), var(--gray-5), var(--gray-6));
+    transform: translateX(-100%);
+  }
+}
+
+// ===================================================================
 .rdp-weeknumber, .rdp-day {
   transition: var(--transition)
 }
