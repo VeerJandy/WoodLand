@@ -1,12 +1,14 @@
 import { type NextRequest, NextResponse } from 'next/server'
 
 import { protectedRoutes } from '~/consts/ProtectedRoutes'
-import RouterEnum from '~/enums/RouterEnum'
+import Router from '~/consts/Router'
 import { parseJwt } from '~/helpers/parseJwt'
 import { checkIsPathnameHasLocale, defaultLocale } from '~/i18n/i18n'
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next).*)']
+  matcher: [
+    '/((?!api|_next/static|_next/image|public|favicon.ico|banner.glb|robots.txt|images|$).*)'
+  ]
 }
 
 export async function middleware(request: NextRequest) {
@@ -19,7 +21,7 @@ export async function middleware(request: NextRequest) {
 
   if (protectedRoute) {
     if (!user || !user.role.includes(protectedRoute.role)) {
-      request.nextUrl.pathname = RouterEnum.Forbidden
+      request.nextUrl.pathname = Router.Forbidden
       return NextResponse.redirect(request.nextUrl)
     }
   }

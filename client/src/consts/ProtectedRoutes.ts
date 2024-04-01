@@ -1,22 +1,23 @@
-import RouterEnum from '~/enums/RouterEnum'
+import type { RouterType } from '~/consts/Router'
+import Router from '~/consts/Router'
 import { UserRoleEnum } from '~/modules/user'
 
 interface ProtectedRoute {
-  route: RouterEnum
+  route: RouterType
   role: UserRoleEnum
 }
 
 export const protectedRoutes: ProtectedRoute[] = [
   {
-    route: RouterEnum.Admin,
+    route: Router.Admin,
     role: UserRoleEnum.Moderator
   },
   {
-    route: RouterEnum.SuperAdmin,
+    route: Router.SuperAdmin,
     role: UserRoleEnum.SuperAdmin
   },
   {
-    route: RouterEnum.Profile,
+    route: Router.Profile,
     role: UserRoleEnum.User
   }
 ]

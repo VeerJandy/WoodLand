@@ -1,6 +1,6 @@
-import { HttpStatus, Injectable } from '@nestjs/common'
-import { BackResponse } from '~/models/BackResponseModel'
-import CurrencyEnum from '~/enums/CurrencyEnum'
+import { Injectable, HttpStatus } from '@nestjs/common'
+import type { BackResponse } from '~/models/BackResponseModel'
+import Currency from '~/consts/Currency'
 
 @Injectable()
 export class ProductsService {
@@ -20,7 +20,7 @@ export class ProductsService {
           descriptionFullEn:
             'This coffee table impresses with its modernity and style. Perfect for contemporary interiors.',
           price: {
-            currency: CurrencyEnum.Uah,
+            currency: Currency.Uah,
             value: 23416
           },
           discount: {
@@ -81,7 +81,7 @@ export class ProductsService {
           descriptionFullEn:
             'This environmentally friendly high-end wardrobe impresses with its quality and design.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 31999
           },
           discount: {
@@ -146,7 +146,7 @@ export class ProductsService {
           descriptionFullEn:
             'This elegant dresser with vintage charm will add character to your interior.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 18999
           },
           discount: {
@@ -207,7 +207,7 @@ export class ProductsService {
           descriptionFullEn:
             'This cozy bed will create an atmosphere of peace and comfort in your bedroom.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 26999
           },
           discount: {
@@ -272,7 +272,7 @@ export class ProductsService {
           descriptionFullEn:
             'This light and comfortable wooden chair are perfect for the kitchen or living room.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 8999
           },
           discount: {
@@ -333,7 +333,7 @@ export class ProductsService {
           descriptionFullEn:
             'This functional and stylish wooden bookshelf is perfect for organizing space in your room.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 14999
           },
           discount: {
@@ -395,7 +395,7 @@ export class ProductsService {
           descriptionFullEn:
             'This convenient and portable desk with a built-in organizer is perfect for work or study.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 7999
           },
           discount: {
@@ -462,7 +462,7 @@ export class ProductsService {
           descriptionFullEn:
             'This modern desk with ergonomic design is created for maximum comfort during work or study.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Eur,
             value: 15999
           },
           discount: {
@@ -527,7 +527,7 @@ export class ProductsService {
           descriptionFullEn:
             'This compact kitchen table with a stylish design is perfect for small kitchens or dining areas.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 6999
           },
           discount: {
@@ -592,7 +592,7 @@ export class ProductsService {
           descriptionFullEn:
             'This bed with luxurious design and high-quality mattress will provide you the best sleep experience.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 26999
           },
           discount: {
@@ -669,7 +669,7 @@ export class ProductsService {
           descriptionFullEn:
             'This computer desk will provide you with the necessary freedom and convenience during work or study, with convenient shelves and built-in outlets.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 12999
           },
           discount: {
@@ -736,7 +736,7 @@ export class ProductsService {
           descriptionFullEn:
             'This lounge chair provides coziness and comfort at home, with soft cushions for extra relaxation.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 8499
           },
           discount: {
@@ -803,7 +803,7 @@ export class ProductsService {
           descriptionFullEn:
             'This large wardrobe is not only stylish but also functional, with ample shelves for convenient storage of your clothes and accessories.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 18999
           },
           discount: {
@@ -870,7 +870,7 @@ export class ProductsService {
           descriptionFullEn:
             'This bed looks like a real spaceship, perfect for those who love space and astronomy.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 21999
           },
           discount: {
@@ -936,7 +936,7 @@ export class ProductsService {
           descriptionFullEn:
             'This bar table is designed to add an elegant charm and comfortable atmosphere to your parties.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 8999
           },
           discount: {
@@ -1003,7 +1003,7 @@ export class ProductsService {
           descriptionFullEn:
             'This minimalist bookshelf will be a great decorative element and functional space for storing books and decor.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 6499
           },
           discount: {
@@ -1070,7 +1070,7 @@ export class ProductsService {
           descriptionFullEn:
             'This kitchen table combines elegant design and practicality, providing convenience during cooking and dining.',
           price: {
-            currency: 'Uah',
+            currency: Currency.Uah,
             value: 7999
           },
           discount: {

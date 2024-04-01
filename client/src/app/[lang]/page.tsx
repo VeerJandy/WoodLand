@@ -1,21 +1,13 @@
-import useDeviceDetect from '~/hooks/useDeviceDetect'
+import { Suspense } from 'react'
 
-import About from './home/components/about/About'
 import Banner from './home/components/Banner'
-import Novelty from './home/components/novelty/Novelty'
-import Popular from './home/components/popular/Popular'
 
-const Home = () => {
-  const isMobile = useDeviceDetect()
-
-  return (
-    <>
+const Home = () => (
+  <>
+    <Suspense fallback={<p>L</p>}>
       <Banner />
-      <About isMobile={isMobile} />
-      <Novelty />
-      <Popular />
-    </>
-  )
-}
+    </Suspense>
+  </>
+)
 
 export default Home

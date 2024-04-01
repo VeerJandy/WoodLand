@@ -6,11 +6,6 @@ import { Roboto } from 'next/font/google'
 import { ReactNode } from 'react'
 
 import type { Locale } from '~/i18n/i18n'
-import { Auth } from '~/modules/auth'
-import { Footer } from '~/modules/footer'
-import { Header } from '~/modules/header'
-import { Toast } from '~/modules/toast'
-import { getUser } from '~/modules/user'
 
 import Providers from './providers'
 
@@ -35,18 +30,12 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
     process.cwd() + `/src/i18n/dictionaries/${params.lang}.json`,
     'utf8'
   )
-  const user = await getUser()
 
   return (
     <html lang={params.lang} className={font.className}>
       <body className="scroll-bar bg-black text-white transition-colors">
-        <Providers dictionary={dictionary} user={user}>
-          <Header />
+        <Providers dictionary={dictionary}>
           <main>{children}</main>
-          <Footer />
-
-          <Auth />
-          <Toast />
         </Providers>
       </body>
     </html>

@@ -38,19 +38,6 @@
 }
 
 // ===================================================================
-//@mixin lightTheme {
-//  [data-theme="light"] {
-//    @content
-//  }
-//}
-
-//@mixin darkTheme {
-//  [data-theme="dark"] {
-//    @content
-//  }
-//}
-
-// ===================================================================
 @mixin mobile {
   @media screen and (min-width: 480px) and (max-width: 767.9px) {
     @content;
